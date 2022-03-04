@@ -22,7 +22,7 @@ swift package init (--type library/executable/empty/system module)
 
 - xcode edit
 
-  - 执行*swift package generate-xcodeproj*
+  - 执行`swift package generate-xcodeproj`
 
     ```
     新版本已经无需执行该指令, 打开package默认创建xcodeproject
@@ -86,6 +86,14 @@ swift package init (--type library/executable/empty/system module)
     可以添加多个依赖，并且用上述类似的方法还可以创建多个products和targets。
 
     然后在产生的targets中，指定对应的dependency的名称就可以了
+
+#### 注意
+
+- Swift Package Manager只限制Swift语言, 混编状态下会报错
+
+  ```shell
+  Target at '.../.../...' contains mixed language source files; feature not supported.
+  ```
 
 
 
