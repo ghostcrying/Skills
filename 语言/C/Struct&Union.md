@@ -41,7 +41,7 @@ sizeof( struct stExample ) == 12  //?
 
 > 假设stExample从地址空间0x0000开始排放。该例子中没有定义指定对齐值，在笔者环境下，该值默认为4。三个成员的存储位置如图
 
-![c_byte_01](https://github.com/HyEnjoys/Skills/blob/main/Assets/C/c_byte_01.gif?raw=true)
+![c_byte_01](https://github.com/HyEnjoys/Skills/blob/main/Assets/C/c_byte_01.png?raw=true)
 
 > 1. 第一个成员变量a的自身对齐值是1，比指定或者默认指定 对齐值4小，所以其有效对齐值为1，所以其存放地址0x0000符合0x0000%1=0.
 > 2. 第二个成员变量b，其自身对齐值为4，所以有效对齐值也为4， 所以只能存放在起始地址为0x0004到0x0007这四个连续的字节空间中，复核0x0004%4=0,且紧靠第一个变量。
@@ -66,7 +66,7 @@ struct stExample
 sizeof( struct stExample ) == 8
 ```
 
-![c_byte_02](https://github.com/HyEnjoys/Skills/Assets/C/c_byte_02.gif)
+![c_byte_02](https://github.com/HyEnjoys/Skills/blob/main/Assets/C/c_byte_02.png?raw=true)
 
 > 1. 第 一个变量a的自身对齐值为1，指定对齐值为2，所以，其有效对齐值为1，假设stExample 从0x0000开始，那么a存放在0x0000，符合0x0000%1= 0;
 > 2. 第二个变量b，自身对齐值为4，指定对齐值为2，所以有效对齐值为2，所以顺序存放在0x0002、0x0003、0x0004、0x0005四个连续 字节中，符合0x0002%2=0。
@@ -92,7 +92,7 @@ struct stExample  {
 sizeof( struct stExample ) == 16  
 ```
 
-![c_byte_03](https://github.com/HyEnjoys/Skills/Assets/C/c_byte_03.gif)
+![c_byte_03](https://github.com/HyEnjoys/Skills/blob/main/Assets/C/c_byte_03.png?raw=true)
 
 > struct b 结构体的自身对齐值是4（由成员cc决定的），所以存储地址必须是4的整数倍。
 >
