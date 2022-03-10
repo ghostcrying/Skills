@@ -132,3 +132,9 @@ Flutter 中添加静态资源很简单，将静态资源放置在任意目录（
 
 > 上面文字的意思是，container 这个容器组件中 color 和decoration不能同时存在。注释掉其中一个就可以了
 
+
+
+##### 11. Waiting to be able to obtain lock of Flutter binary artifacts directory: /usr/local/Caskroom/flutter/2.5.0/flutter/bin/cache/lockfile
+
+> 直接去该目录下删除该文件重新运行.
+
