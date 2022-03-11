@@ -166,6 +166,29 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 ##### 界面更新
 
 > 当在操作 UI 时，比如改变了 Frame、更新了 UIView/CALayer 的层次时，或者手动调用了 UIView/CALayer 的 setNeedsLayout/setNeedsDisplay方法后，这个 UIView/CALayer 就被标记为待处理，并被提交到一个全局的容器去
+>
+> 页面渲染
+>
+> - 调用uiview.setNeedsDisplay, 会调用view.layer.setNeedsDisplay
+>   - 此时给layer标记, 此时并没有开始绘制, 会等待runloop beforeWaiting时开始绘制
+> - 调用calayer.display开始绘制
+>   - calayer判定CALayerDelegate的displaylayer方法是否实现, 未实现则会继续执行系统绘制流程
+>   - 判断是否有CALayerDelegate
+>     - 有的
+>       - layer.delegate.drawLayer:inContext, 并返回给uiview.drawRect回调, 此处自定义
+>     - 没有
+>       - 调用calayer.drawInContext:
+
+```
+异步绘制
+- 就是可以在子线程中把需要绘制的图形提前在子线程处理好.将准备好的图像数据直接返回给主线程使用, 降低主线程压力
+- 过程
+  - 通过view.delegate.displayLayer:实现异步绘制
+  - CALayerDelegate代理负责生成bitmap
+  - 设置bitmap为layer.contents的值
+```
+
+
 
 ##### Timer
 
