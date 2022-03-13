@@ -7,6 +7,8 @@
 ##### 启动时间
 
 > 在Product->Scheme->Edit Scheme->Environment Variables修改DYLD_PRINT_STATISTICS值为${DEBUG_ACTIVITY_MODE}或者1
+>
+> DYLD_PRINT_STATISTICS_DETAILS可看到更详细信息
 
 ###### 打印
 

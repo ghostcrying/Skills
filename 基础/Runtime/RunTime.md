@@ -209,3 +209,21 @@ struct objc_class {
 isKindOf： 调用者A，传入参数B， A可以继续向上遍历找到合适的isa， 但是B不会的，
 ```
 
+###### self&super
+
+> - self调用自身方法, super调用父类方法
+> - self是类, super是预编译指令
+> - self = [super init] 是为了保证超类初始化ok, 防止返回不同的对象
+
+```
+// self
+// id objc_msgSend(id theReceiver, SEL theSelector, ...)
+// super
+// id objc_msgSendSuper(struct objc_super, SEL op, ...)
+struct objc_super {
+  id receiver;
+  Class superClass;
+}
+// 由上面可知: 最终消息接收者都是receiver, 因此打印相同
+```
+
