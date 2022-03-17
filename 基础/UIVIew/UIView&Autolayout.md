@@ -6,6 +6,7 @@
 
 #### translatesAutoresizingMaskIntoConstraints
 
+- 默认为`true`
 - 把 autoresizingMask 转换为 Constraints
 - 即：可以把 frame ，bouds，center 方式布局的视图自动转化为约束形式。（此时该视图上约束已经足够 不需要手动去添加别的约束）
 
@@ -14,7 +15,7 @@
 - 用代码创建的所有view ， translatesAutoresizingMaskIntoConstraints 默认是 YES
 - 用 IB 创建的所有 view ，translatesAutoresizingMaskIntoConstraints 默认是 ~~NO~~ (autoresize 布局:YES , autolayout布局 :NO)
 
-> translatesAutoresizingMaskIntoConstraints 的本意是将 frame 布局 自动转化为 约束布局，转化的结果是为这个视图自动添加所有需要的约束，如果我们这时给视图添加自己创建的约束就一定会约束冲突。
+> translatesAutoresizingMaskIntoConstraints 的本意是将 frame 布局自动转化为 约束布局，转化的结果是为这个视图自动添加所有需要的约束，如果我们这时给视图添加自己创建的约束就一定会约束冲突。
 >
 > 为了避免上面说的约束冲突，我们在代码创建 约束布局 的控件时 直接指定这个视图不能用frame 布局（即translatesAutoresizingMaskIntoConstraints=NO），可以放心的去使用约束了
 
