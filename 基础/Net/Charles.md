@@ -14,6 +14,8 @@
 
 ![img](https://d4alb0m07y.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTNlZWYwNmNhOTQwZGRhMzNiOWRjM2I1MTM1YzRjODRfM0ZJcWhweUxLN1FPZW44WDRCTXdOekdWSGJlTm1qVmJfVG9rZW46Ym94Y25HQzdRaWVyb01kUjZaU2U2NWdxMkFnXzE2NDcxNTc5MTY6MTY0NzE2MTUxNl9WNA)
 
+#### [破解](https://www.zzzmode.com/mytools/charles/)
+
 
 
 #### 配置手机
