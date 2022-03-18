@@ -84,7 +84,7 @@
 >
 > 3、通过设置contentMode属性值为UIViewContentModeRedraw。那么将在每次设置或更改frame的时候自动调用drawRect:。
 >
-> 4、直接调用setNeedsDisplay，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0。
+> 4、直接调用setNeedsDisplay在下一周期触发，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0。
 >
 > * 以上1,2推荐；而3,4不提倡
 
@@ -125,3 +125,109 @@
 > 6、改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件。
 >
 > 7、直接调用setLayoutSubviews
+
+
+
+```
+class Root: UIView {
+    
+    /** 所有视图的outlet和action都已经连接,但还未确定.
+     *  可以进行无法再xib或者storyboard无法执行设置
+     *  例如: xib创建的UI的属性, 可以在这里进行重新设定
+     */
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print(#function)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print(#function)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        print(#function)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            print("Delay 02s, layoutIfNeeded ----")
+            self.layoutIfNeeded()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            print("Delay 04s, setNeedsLayout ----")
+            self.setNeedsLayout()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
+            print("Delay 06s, setNeedsDisplay ----")
+            self.setNeedsDisplay()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8) {
+            print("Delay 08s, setNeedsFocusUpdate ----")
+            self.setNeedsFocusUpdate()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10) {
+            print("Delay 10s, layoutSubviews")
+            self.layoutSubviews()
+        }
+    }
+    /** 1. 直接调用setNeedsLayout()（这个在上面苹果官方文档里有说明）
+     *  2. addSubview的时候。
+     *  3. 当view的size发生改变的时候，前提是frame的值设置前后发生了变化。
+     *  4. 滑动UIScrollView的时候。
+     *  5. 旋转屏幕的会触发父UIView的layoutSubviews(没有验证成功)
+     */
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print(#function)
+    }
+    // 绘制: 当视图初始化或者调用setNeedsDisplay()(下一周期)时, 触发
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        print(#function)
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        return super.hitTest(point, with: event)
+    }
+}
+
+let view = Root(frame: CGRect(x: 0, y: 0, width: widths, height: height))
+print("init view")
+PlaygroundPage.current.liveView = view
+print("add view")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -17,6 +17,13 @@ open class CALayer: NSObject {
     open var position: CGPoint
     open var anchorPoint: CGPoint
     open var transform: CATransform3D
+    
+    /* An object providing the contents of the layer, typically a CGImageRef,
+     * but may be something else. (For example, NSImage objects are
+     * supported on Mac OS X 10.6 and later.) Default value is nil.
+     * Animatable. */
+    /** Layer content properties and methods. **/
+    open var contents: Any?
 }
 ```
 
