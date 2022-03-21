@@ -28,9 +28,8 @@ try {
     GeneratedPluginRegistrant.register(with: self);
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
-    let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
-                                                   binaryMessenger: controller);
-    batteryChannel.setMethodCallHandler({
+    let channel = FlutterMethodChannel(name: "samples.flutter.io/battery", binaryMessenger: controller);
+    channel.setMethodCallHandler({
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
           if ("test1" == call.method) {
               result(1)

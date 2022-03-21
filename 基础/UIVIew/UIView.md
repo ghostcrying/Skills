@@ -4,24 +4,60 @@
 
 - addSubview:
   - 添加一个子视图到接收者并让它在最上面显示出来。
+  
 - bringSubviewToFront:
   - 把指定的子视图移动到顶层
+  
 - convertPoint:fromView:
   - 把一个点从一个坐标系转换到接收者的坐标系
+  
 - convertPoint:toView:
   - 转换一个点从接收者坐标系到给定的视图坐标系
+  
 - convertRect:fromView:
   - 转换一个矩形从其他视图坐标系到接收者坐标系。
+  
 - convertRect:toView:
   - 转换接收者坐标系中的矩形到其他视图
+  
 - drawRect:
   - 绘制
+  
+- sizeToFit
+  
+  - sizeToFit会自动调用sizeThatFits方法；
+  - sizeToFit不应该在子类中被重写，应该重写sizeThatFits
+  - sizeToFit可以被手动直接调用
+  - sizeToFit和sizeThatFits方法都没有递归，对subviews也不负责，只负责自己
+  
+- sizeThatFits
+
+  - sizeThatFits传入的参数是receiver当前的size，返回一个适合的size
+
+  ```
+  override func sizeToFit() {
+  ​    var bound = self.frame
+  ​    bound.size = self.sizeThatFits(bound.size)
+  ​    self.frame = curSize
+  }
+  
+  override func sizeThatFits(_ size: CGSize) -> CGSize {
+  ​    var bound = self.bounds
+  ​    ...
+  ​    return bound.size
+  }
+  ```
+
+  
+
 - exchangeSubviewAtIndex:withSubviewAtIndex:
   - 交换接收者的子视图和给定的索引视图
+
 - hitTest:withEvent:
   - 返回接收者视图层次中最远的派生（包括它本身）的特定的点。
   - 这个方法贯穿视图的层次发送pointInside:withEvent: 消息到每一个子视图用来决定那个子视图需要接收触摸事件。如果pointInside:withEvent: 返回YES，那么视图的层次全部贯穿；否则视图层次的分支是被否定的。你不太需要调用这个方法，但是你需要重写它用来隐藏子视图的触摸事件。
     如果视图是隐藏的，禁止用户交互的或者透明值小于01那么这个方法不可用
+
 - awakeFromNib
   - 从xib或者storyboard加载完毕就会调用
 
@@ -36,29 +72,41 @@
 
 - insertSubview:aboveSubview:
   - 在视图层次顶层插入一个视图
+
 - insertSubview:atIndex:
   - 插入视图到指定的索引
+
 - insertSubview:belowSubview:
   - 插入视图到显示链的底层
+
 - isDescendantOfView:
   - 返回一个布尔值指出接收者是否是给定视图的子视图或者指向那个视图
+
 - layoutIfNeeded
   - 排列子视图如果需要的话
+
 - layoutSubviews
   - 排列子视图
+
 - pointInside:withEvent:
   - 返回一个布尔值指出接收者是否包含特定的点
+
 - removeFromSuperview
   - 把接收者从它的父视图或者窗口移除，并在响应链中移除。
+
 - sendSubviewToBack:
   - 移动指定的子视图到它相邻视图的後面
+
 - setNeedsDisplay
   - 控制接收者的边界矩形被标记为需要显示
   - 主动触发drawRect:
+
 - setNeedsDisplayInRect:
   - 标记接收者中的特定的矩形区域为需要显示，或者添加接收者现有的其他无效区域
+
 - setNeedsLayout
   - 设置当子视图显示的时候需要重新排列
+
 - viewWithTag:
   - 返回视图的特定的标签
 
