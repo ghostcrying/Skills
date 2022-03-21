@@ -2,6 +2,73 @@
 
 
 
+#### 原生与Flutter交互
+
+##### Flutter采用 MethodChannel
+
+```
+static const platform = const MethodChannel('samples.flutter.io/sample');
+try {
+  final dynamic result = await platform.invokeMethod('test1');
+  print(result.toString());
+} on PlatformException catch (e) {
+  batteryLevel = "Failed to get battery level: '${e.message}'.";
+  print("Failed to get test1 result: '$(e.message)'");
+}
+```
+
+##### iOS原生响应
+
+```
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    GeneratedPluginRegistrant.register(with: self);
+
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
+    let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
+                                                   binaryMessenger: controller);
+    batteryChannel.setMethodCallHandler({
+      (call: FlutterMethodCall, result: FlutterResult) -> Void in
+          if ("test1" == call.method) {
+              result(1)
+            } else {
+              result(FlutterMethodNotImplemented)
+            }
+    });
+
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions);
+  }
+}
+```
+
+##### Android原生响应
+
+```
+在main.activity中
+class MainActivity() : FlutterActivity() {
+  private val CHANNEL = "samples.flutter.io/sample"
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    GeneratedPluginRegistrant.registerWith(this)
+
+    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      if (call.method == "test1") {
+        result.success(10)
+        result.error("UNAVAILABLE", "Test1 method not available.", null)
+      } else {
+        result.notImplemented()
+      }
+    }
+  }
+}
+```
+
+
+
 #### 创建项目
 
 - **Visual Studio Code**
