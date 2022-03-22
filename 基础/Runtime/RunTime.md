@@ -165,6 +165,8 @@ struct objc_class {
 @end
 ```
 
+![](https://github.com/HyEnjoys/Skills/blob/main/Assets/Runtime/msg_forward.png?raw=true)
+
 ###### 动态解析
 
 ```
@@ -252,8 +254,6 @@ void eatMethod(id obj, SEL _cmd) {
 }
 ```
 
-
-
 >  解析: 说白了就是判定isa指针指向是否相等
 >
 > - isKind: 检测当前对象是否属于某个类或者派生类 (可以检测根类)
@@ -303,5 +303,57 @@ struct objc_super {
   Class superClass;
 }
 // 由上面可知: 最终消息接收者都是receiver, 因此打印相同
+```
+
+
+
+###### 关联对象
+
+```
+extension UIView {
+   filePrivate static var isShowKey = "isShowKey"
+   var isShow: Bool {
+      get {
+          return objc_getAssociatedObject(self, &isShowKey) as? Bool ?? false
+      }
+      set {
+          objc_setAssociatedObject(self, &isShowKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      }
+    }
+}
+```
+
+
+
+###### 黑魔法
+
+```
+# Swift版本中黑魔法与OC不太一致
+import UIKit
+class Person {
+    dynamic func play() {
+        print("play")
+    }
+}
+extension Person {
+    @_dynamicReplacement(for: play())
+    func play1() {
+        print("play 1")
+        play()
+    }
+}
+extension Person {
+    @_dynamicReplacement(for: play())
+    func play2() {
+        print("play 2")
+        play()
+    }
+}
+
+Person().play()
+// play 2
+// play
+// 在Build Settings -> Other Swift Flags中添加 -Xfrontend -enable-dynamic-replacement-chaining
+// 最终打印 play2, play1, play
 ```
 

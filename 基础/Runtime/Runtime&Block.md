@@ -75,11 +75,9 @@
 #### 用copy修饰
 
 > 1. 一般情况下对于Block不需要自行调用copy, 只有Block区域外会自动调用copy.
->
-> 2. ARC下使用copy与strong同等效果, 因为block的retain就是copy实现的.
->
-> 3. 除全局Block外, 声明的Block都是栈Block, 随时会被销毁, 为了能够在Block声明域外使用, 需要copy到堆
->    - 保存在栈中的block会随着函数调用结束而销毁. 从而导致我们正在执行一个包含block的函数之后无法访问这个block, 再次访问会出现空指针异常.
+>2. ARC下使用copy与strong同等效果, 因为block的retain就是copy实现的.
+> 3. ARC下编译器默认声明的block都是全局block或者堆block
+>   1. 使用copy可以理解为防止指针拷贝导致被外部改变**(此处有疑问?)**
 
 
 
@@ -206,6 +204,11 @@ self.myBlock = ^() {
   __strong typeof(self) strongSelf = weakSelf;
   [strongSelf test];
 };
+# 因为weakSelf和self是两个内容, test有可能就直接对self自身引用计数减到0了.
+  所以在[weakSelf test]的时候,你很难控制这里self是否就会被释放了.weakSelf只能看着.
+# __strong __typeof在编译的时候,实际是对weakSelf的强引用.
+  指针连带关系self的引用计数还会增加. 但是你这个是在block里面,生命周期也只在当前block的作用域.
+  所以, 当这个block结束, strongSelf随之也就被释放了. 同时也不会影响block外部的self的生命周期
 ```
 
 ###### 方案二
@@ -215,7 +218,7 @@ self.myBlock = ^() {
 __block ViewController *vc = self;
 self.block = ^(void){
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"%@",vc.name);
+        NSLog(@"%@", vc.name);
         vc = nil;
     });
 };
@@ -228,7 +231,7 @@ self.block();
 # 通过传参的方式: 参数vc的作用于就是block代码块的范围, 执行完毕后, VC置空自然可以释放self
 self.block = ^(ViewController *vc){
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"%@",vc.name);
+        NSLog(@"%@", vc.name);
     });
 };
 self.block(self);
