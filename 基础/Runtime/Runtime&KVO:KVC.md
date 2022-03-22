@@ -1,7 +1,5 @@
 # Runtime-KVO&KVC
 
-
-
 ### KVC
 
 #### 原理
@@ -26,7 +24,7 @@
      This proxy object subsequently converts any NSSet message it receives into some combination of countOf<Key>, enumeratorOf<Key>, and memberOf<Key>: messages to the object that created it. In effect, the proxy object working together with the key-value coding compliant object allows the underlying property to behave as if it were an NSSet, even if it is not.
      ```
 
-  4. 若accessInstanceVariablesDirectly返回true, 顺序查找`_<key>`、`_is<Key>`、`<key>`或`is<Key>`的成员变量, 有则返回
+  4. 若accessInstanceVariablesDirectly(直接访问实例变量)返回true, 顺序查找`_<key>`、`_is<Key>`、`<key>`或`is<Key>`的成员变量, 有则返回
 
   5. 如果getter方法或者成员变量都未找到, 调用valueForUndefineKey抛出异常
 

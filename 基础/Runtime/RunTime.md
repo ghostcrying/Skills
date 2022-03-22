@@ -9,6 +9,16 @@
 ###### 特性
 
 - 编写的代码具有运行时、动态特性
+- OC语言函数调用为消息发送,属于动态调用, 在编译阶段并不能决定真正调用哪个函数(编译阶段OC可以调用任何声明过的函数, 而C语言只有声明且实现才可以调用), 只有运行时才会根据函数名找到对应函数调用
+  - 动态类型
+    - 只有在运行期间才会确定对象类型
+
+  - 动态绑定
+    - 通过消息机制将函数调用推迟到运行阶段
+
+  - 动态加载
+    - 根据需求加载所需资源
+
 
 
 
@@ -142,6 +152,74 @@ struct objc_class {
 > - 最终发送
 >   - objc_msgSend("对象","SEL","参数"...)
 >   - objc_msgSend( id self, SEL op, ... )
+
+###### 消息转发
+
+```
+@interface Property: NSObject
+@end
+@implementation Property
+- (void)eat {
+    NSLog(@"Property eat");
+}
+@end
+```
+
+###### 动态解析
+
+```
+void eatMethod(id obj, SEL _cmd) {
+   NSLog(@"Doing foo"); // 新的foo函数
+}
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+  if (sel == @selector(eat:)) {
+    // 动态解析, 指定新的IMP
+    class_addMethod([self class], sel, (IMP)eatMethod, "V@:");
+    return YES;
+  }
+
+  return [super resolveInstanceMethod:sel];
+}
+```
+
+###### 备用接受者
+
+```
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+  return [super resolveInstanceMethod:sel]; // NO
+}
+/// 备用接收者, 指定Person为消息接受者
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+  if (aSelector == @selector(eat)) {
+    return [Person new];
+  }
+  return [super forwardingTargetForSelector:aSelector];
+}
+```
+
+###### 消息重定向
+
+```
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+   return [super forwardingTargetForSelector:aSelector]; // nil
+}
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+   if ([NSStringFromSelector(aSelector) isEqualToString:@"eat"]) {
+       return [NSMethodSignature signatureWithObjCTypes:"v@:"]; // 签名，进入forwardInvocation
+   }
+   return [super methodSignatureForSelector:aSelector];
+}
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+   SEL selector = anInvocation.selector;
+   Person *p = [[Person alloc] init];
+   if ([p respondsToSelector:selector]) {
+       [anInvocation invokeWithTarget:p];
+   } else {
+       // 消息处理异常
+       [self doesNotRecognizeSelector:selector];
+   }
+}
+```
 
 
 
