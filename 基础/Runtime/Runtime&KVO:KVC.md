@@ -28,11 +28,15 @@
 
   5. 如果getter方法或者成员变量都未找到, 调用valueForUndefineKey抛出异常
 
+  ![](https://github.com/HyEnjoys/Skills/blob/main/Assets/Runtime/kvc_get.png?raw=true)
+
 - set原理
 
   1. 顺序查找名为`set<Key>:`或`_set<Key>`的方法, 有则调用
   2. 若accessInstanceVariablesDirectly返回true, 则顺序查找`_<key>`、`_is<Key>`、`<key>`或`is<Key>`的实例变量, 有则赋值
   3. 如果setter方法 或者 实例变量都没有找到, 调用setValue:forUndefineKey默认抛出异常
+  
+  ![](https://github.com/HyEnjoys/Skills/blob/main/Assets/Runtime/kvc_set.png?raw=true)
 
 #### 应用
 

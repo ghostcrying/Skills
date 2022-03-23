@@ -6,7 +6,8 @@
 
 >  运行循环(do-while循环), 一个Runloop就是用于处理既定工作和接受到外来事件的事件处理循环
 >
-> - 作用:
+>  作用:
+>
 >   - 保持程序的持续运行
 >   - 处理APP中各种事件(Timer Touch Selector等事件)
 >   - 节省CPU资源 ,提高程序性能. (处理任务时执行, 无任务时释放资源休眠)
@@ -100,7 +101,7 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 
 > - 一个Runloop包含若干个Mode, 每个Mode包含若干个source timer observe
 >    - 每个mode至少包含一个以上source/timer/observe
-> - 每次Runloop启动时, 只能指定一个mode, 即currentmode, 切换mode则需要先退出当前loop, 重新制定mode进入
+> - 每次Runloop启动时, 只能指定一个mode, 即currentmode, 切换mode则需要先退出当前loop, 重新指定mode进入
 >    - 这是需要分隔开不同组的source/timer/observe, 让其不相互影响
 > - 当Runloop中没有任何source/timer/observe时, Runloop就会立即退出
 > - **mode **(系统默认注册了5个)
