@@ -235,7 +235,7 @@ ClipPath	按照自定义的路径剪裁
 ```
 平移
 DecoratedBox(
-  decoration:BoxDecoration(color: Colors.red),
+  decoration: BoxDecoration(color: Colors.red),
   //默认原点为左上角，左移20像素，向上平移5像素  
   child: Transform.translate(
     offset: Offset(-20.0, -5.0),
@@ -244,7 +244,7 @@ DecoratedBox(
 )
 旋转
 DecoratedBox(
-  decoration:BoxDecoration(color: Colors.red),
+  decoration: BoxDecoration(color: Colors.red),
   child: Transform.rotate(
     //旋转90度
     angle:math.pi/2 ,

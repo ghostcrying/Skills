@@ -9,6 +9,11 @@
 > 在Product->Scheme->Edit Scheme->Environment Variables修改DYLD_PRINT_STATISTICS值为${DEBUG_ACTIVITY_MODE}或者1
 >
 > DYLD_PRINT_STATISTICS_DETAILS可看到更详细信息
+>
+> 在使用这种方式时，需要注意两个地方：
+>
+> - iOS 15 以上的真机不再支持打印相关耗时数据。
+> - 在 Debug 环境下拿到的数据会有`debugger pause time`的影响，我们可以将`scheme`中的`debug executable`进行关闭来去除该影响因素。
 
 ###### 打印
 
