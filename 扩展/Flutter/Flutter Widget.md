@@ -30,6 +30,8 @@
 
 ###### 生命周期
 
+![](https://github.com/HyEnjoys/Skills/blob/main/Assets/Flutter/lifeStyle.png?raw=true)
+
 - initState
 
   ```
