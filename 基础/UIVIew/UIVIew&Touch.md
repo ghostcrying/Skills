@@ -10,7 +10,9 @@
 
 #### 事件响应
 
-##### 事件链
+##### 时间分发机制
+
+![img](https://cdn.nlark.com/yuque/0/2021/png/1728826/1610689654971-f1e0cb22-65c5-4bcb-aef8-5c67d84bdc78.png?x-oss-process=image%2Fresize%2Cw_601%2Climit_0)
 
 - 事件链UIApplication -> UIWindow -> UIView 从后往前遍历view的subviews -> 找到最佳view
 
@@ -56,7 +58,7 @@
 
 - touchbegin:withEvent只要重写即可响应
 
-- UIControll的子类: 是第一响应者则直接由UIApplication派发事件, 不通过Response Chain派发, 如果其不能处理事件, 则交给手势处理或者响应链传递
+- UIControll的子类: 是第一响应者则直接由UIApplication派发事件, 打断Response Chain, 如果其不能处理事件, 则交给手势处理或者响应链传递
 
 - 当响应者链和手势同时出现时，也就是既实现了touches方法又添加了手势，会发现touches方法有时会失效，这是因为手势的执行优先级是高于响应者链的
 

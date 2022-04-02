@@ -101,18 +101,31 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 
 > - 一个Runloop包含若干个Mode, 每个Mode包含若干个source timer observe
 >    - 每个mode至少包含一个以上source/timer/observe
+>    
 > - 每次Runloop启动时, 只能指定一个mode, 即currentmode, 切换mode则需要先退出当前loop, 重新指定mode进入
 >    - 这是需要分隔开不同组的source/timer/observe, 让其不相互影响
+>    
 > - 当Runloop中没有任何source/timer/observe时, Runloop就会立即退出
+>
 > - **mode **(系统默认注册了5个)
 >    - kCFRunloopDefaultMode: APP的默认运行模式,通常主线程执行在该模式
 >    - UITrackingRunLoopMode: 界面跟踪mode(用户ScrollView追踪触摸滑动, 保持接卖弄滑动时不受其他mode影响)
 >    - UIInitializationRunLoopMode: 在刚启动APP时进入的第一个mode, 启动完成后不再使用,会切换到kCFRunLoopDefaultMode下
 >    - GSEventReceiveRunloopMode: 接收系统内部事件(一般用不到)
 >    - KCFRunLoopCommonModes: 占位模式, 作为标记kCFRunLoopDefaultMode和UITrackingRunLoopMode用
+>    
 > - **Source**
+>    
 >    - source0: 可以理解为正常的输入事件(比如UIButton点击)
 >    - source1: 基于port, 通过内核和其他线程通信, 接受/分发系统事件
+>    
+>    input source/timer source
+>    
+>    - Port-Based Sources，系统底层的 Port 事件，例如 CFSocketRef ，在应用层基本用不到
+>    - Custom Input Sources，用户手动创建的 Source;
+>    - Cocoa Perform Selector Sources， Cocoa 提供的 performSelector 系列方法，也是一种事件源;
+>    - Timer Source指定时器事件，该事件的优先级是最低的
+>    
 > - **observe**:
 >    - kCFRunLoopEntry = (1UL << 0),                 // 即将进入loop
 >    - kCFRunLoopBeforeTimers = (1UL << 1),  // 即将处理Timer
@@ -196,6 +209,7 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 > - 自身带有触发的容忍度, 也就是可能会被系统修改触发的事件节点, 因此并不准确
 > - Timer默认default模式下, 在页面滚动过程中会被系统主动修改mode->UITrackingRunloopMode, 会导致失效.
 >   - 可以设定CommonMode(占位模式), 就是给Timer打上UITracking/Default标签
+>   - 也可以在子线程中创建于处理Timer时间, 然后回调到主线程执行UI
 > - CADisplayLink 是一个和屏幕刷新率一致的定时器（但实际实现原理更复杂，和 NSTimer 并不一样，其内部实际是操作了一个 Source）。如果在两次屏幕刷新之间执行了一个长任务，那其中就会有一帧被跳过去（和 NSTimer 相似），造成界面卡顿的感觉
 
 ##### PerformSelector

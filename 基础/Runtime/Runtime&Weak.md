@@ -13,7 +13,7 @@
    - 进行线程冲突处理预判断
    - 判断isa是否为空, 否则进行初始化
    - 存在旧值, 则weak_unregister_no_lock清理
-   - 存储新值, weak_regist er_no_lock
+   - 存储新值, weak_register_no_lock
    - 对新旧散列表解锁, 返回第二参数
  - release
    - objc_release

@@ -357,3 +357,160 @@ Person().play()
 // 最终打印 play2, play1, play
 ```
 
+- OC中一般在load中进行黑魔法交换处理
+
+  > load是只要类所在的文件被引用就会被调用，而initialize是在类或者其子类的第一个方法被调用前调用。所以如果类没有被引用进项目，就不会调用load方法，即使类文件被引用进来，如果没有使用，那么initialize不会被调用。
+  >
+  > - load调用
+  >   - 子类load在父类load之后执行, 分类的load会在主类load之后执行
+  > - initialize调用
+  >   - 走消息发送机制, 子类未实现则走父类, 子类实现则先父类后子类, 多个Category都实现了, 则只走Compile Sources列表中的最后一个Category进行覆盖
+  > - 确保执行一次
+  >   - load和initialize可能会调用多次，所以在这两个方法里面做的初始化操作需要dispatch_once来保证只初始化一次
+
+
+
+###### 防崩溃处理
+
+> 针对动态解析->备用接收者->消息重定向这个逻辑可以指定自定义的异常拦截.
+>
+> OC中的防崩溃处理可以参照AvoidCrash三方库
+>
+> - KVC/NSArray/NSMutableArray/NSDictionary/NSMutableDictionary/NSString/NSMutableString/NSAttributeString/NSMutableAttributedString
+> - Unrecognize selector send to instance
+>
+> AvoidCrash针对异常处理后会拦截Bugly异常, 可以监听avoidcrash异常进行bugly自定义上报
+
+###### 测试: 入参崩溃拦截
+
+> hook方案更加方便, 但是有损性能
+> 安全接口需要业务统一调用安全API, 更加轻量, 可进行编码规范
+
+- hook
+
+  ```
+  @implementation NSMutableArray (Safe)
+  + (void)load {
+      [self swizzMethodOriginalSelector:@selector(addObject:)
+                       swizzledSelector:@selector(safe_addObject:)];
+  }
+  
+  + (void)swizzMethodOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector {
+      Method originalMethod = class_getInstanceMethod(self.class, originalSelector);
+      Method swizzledMethod = class_getInstanceMethod(self.class, swizzledSelector);
+      BOOL didAddMethod = class_addMethod(self.class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+      if (didAddMethod) {
+          class_replaceMethod(self.class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+      } else {
+          method_exchangeImplementations(originalMethod, swizzledMethod);
+      }
+  }
+  - (void)safe_addObject:(id)anObject {
+      if (anObject) { [self safe_addObject:anObject]; }
+  }
+  @end
+  ```
+
+- 安全接口
+
+  ```
+  @implementation NSMutableArray (safe)
+  - (void)safe_AddObject:(id)anObject {
+      if (anObject) { [self addObject:anObject]; }
+  }
+  @end
+  ```
+
+###### Swift中数组越界预处理 (也是安全接口)
+
+```
+public protocol ArraySafeProtocol {
+    
+    associatedtype Element
+    
+    var anyOne: Element? { get }
+    
+    var reduction: [Element] { get }
+    
+    func randomAll() -> [Element]
+    
+    subscript (safe index: Int) -> Element? { get set }
+    
+    mutating func safeAppend(_ object: Element?) -> Array<Element>
+    mutating func safeInsert(_ object: Element?, at index: Int) -> Array<Element>
+    mutating func safeRemove(at index: Int) -> Array<Element>
+    mutating func safeRemoveFirst() -> Element?
+    mutating func safeRemoveLast() -> Element?
+}
+
+extension Array: ArraySafeProtocol {
+    
+    public var anyOne: Element? {
+        guard count > 0 else { return nil }
+        return self[Int.random(in: indices)]
+    }
+    
+    public var reduction: [Element] {
+        return reduce(into: []) {
+            if let tmp = $1 as? [Element] {
+                $0.append(contentsOf: tmp.reduction)
+            } else {
+                $0.append($1)
+            }
+        }
+    }
+    
+    public func randomAll() -> [Element] {
+        return sorted { (_, _) in Bool.random() }
+    }
+    
+    /// index如果超出范围则返回nil
+    public subscript (safe index: Int) -> Element? {
+        get { return indices ~= index ? self[index] : nil }
+        set {
+            guard indices ~= index else { return }
+            guard let v = newValue else {
+                remove(at: index)
+                return
+            }
+            insert(v, at: index)
+            remove(at: index + 1)
+        }
+    }
+    
+    /// object为nil则什么都不做并返回self
+    @discardableResult
+    public mutating func safeAppend(_ object: Element?) -> Array<Element> {
+        guard let obj = object else { return self }
+        append(obj)
+        return self
+    }
+    
+    /// object为nil或者index超出范围则什么都不做并返回self
+    @discardableResult
+    public mutating func safeInsert(_ object: Element?, at index: Int) -> Array<Element> {
+        if index >= 0, index < Int(count), let obj = object { insert(obj, at: index) }
+        return self
+    }
+    
+    /// index如果超出范围则什么都不做并返回self
+    @discardableResult
+    public mutating func safeRemove(at index: Int) -> Array<Element> {
+        if index >= 0, index < Int(count) { remove(at: index) }
+        return self
+    }
+    
+    @discardableResult
+    public mutating func safeRemoveFirst() -> Element? {
+        if isEmpty { return nil }
+        return removeFirst()
+    }
+    
+    @discardableResult
+    public mutating func safeRemoveLast() -> Element? {
+        if isEmpty { return nil }
+        return removeLast()
+    }
+}
+```
+
