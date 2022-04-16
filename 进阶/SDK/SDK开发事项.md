@@ -48,7 +48,21 @@
 
 
 
+#### 组件化
 
+[参考](https://juejin.cn/post/7067743813099323423)
+
+- 方式
+
+  - 基于路由 URL 的 UI 页面统跳管理（url-block)。
+
+  - 基于反射的远程接口调用封装(target-action)。
+
+  - 基于面向协议思想的服务注册方案（protocol-class)。
+
+  - 基于通知的广播方案（NSNotification)。
+
+    
 
 #### 需求
 
