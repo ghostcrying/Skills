@@ -129,6 +129,11 @@ struct objc_class {
 >
 > - 实例 --(isa)--> 类 --(super_class)--> 父类  --(super_class)--> ...  --(super_class)--> 根类(NSObject) --(super_class)--> nil
 > - **可以说：isa指针建立起了实例与他所属的类之间的关系，super_class指针建立起了类与其父类之间的关系。**
+> - objc_msgSend(receiver, selector, arg1, arg2, ...)
+>   - receiver: 消息接收者
+>   - selector: 方法名
+>   - arg1/arg2...: 方法参数
+>
 >
 > 具体过程：
 >
@@ -149,6 +154,7 @@ struct objc_class {
 >     - forwardInvocation的参数anInvocation中的selector为导致crash的方法，target为导致crash的对象
 >     - forwardInvocation方法可以啥都不处理，或者做任何不会出问题的事，至此本次消息转发结束，也不会crash。
 >   - 抛出异常: - (void)doesNotRecognizeSelector:(SEL)aSelector
+>     - 错误为: unrecognized selector sent to instance
 > - 最终发送
 >   - objc_msgSend("对象","SEL","参数"...)
 >   - objc_msgSend( id self, SEL op, ... )
@@ -302,7 +308,7 @@ struct objc_super {
   id receiver;
   Class superClass;
 }
-// 由上面可知: 最终消息接收者都是receiver, 因此打印相同
+// 由上面可知: 最终消息接收者都是receiver, 都是self, 因此打印相同
 ```
 
 
@@ -377,7 +383,7 @@ Person().play()
 > OC中的防崩溃处理可以参照AvoidCrash三方库
 >
 > - KVC/NSArray/NSMutableArray/NSDictionary/NSMutableDictionary/NSString/NSMutableString/NSAttributeString/NSMutableAttributedString
-> - Unrecognize selector send to instance
+> - Unrecognized selector send to instance
 >
 > AvoidCrash针对异常处理后会拦截Bugly异常, 可以监听avoidcrash异常进行bugly自定义上报
 

@@ -161,7 +161,7 @@ class AutoreleasePoolPage {
 
 #### 问题
 
-- 通常非alloc、new、copy、mutableCopy出来的对象都是autorelease的，比如[UIImage imageNamed:]、[NSString stringWithFormat]、[NSMutableArray array]等。（会加入到最近的autorelease pool哈）
+- 通常非alloc、new、copy、mutableCopy出来的对象都是autorelease的，比如[UIImage imageNamed:]、[NSString stringWithFormat]、[NSMutableArray array]等。（会加入到最近的autorelease pool）
 
   - 因此不是autoreleasepool可以自动监测对象的创建，而是你对象创建的时候被ARC默认加了`return [obj autorelease]`，就被放进AutoReleasePage啦
 

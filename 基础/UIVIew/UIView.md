@@ -56,7 +56,7 @@
 - hitTest:withEvent:
   - 返回接收者视图层次中最远的派生（包括它本身）的特定的点。
   - 这个方法贯穿视图的层次发送pointInside:withEvent: 消息到每一个子视图用来决定那个子视图需要接收触摸事件。如果pointInside:withEvent: 返回YES，那么视图的层次全部贯穿；否则视图层次的分支是被否定的。你不太需要调用这个方法，但是你需要重写它用来隐藏子视图的触摸事件。
-    如果视图是隐藏的，禁止用户交互的或者透明值小于01那么这个方法不可用
+    如果视图是隐藏的，禁止用户交互的或者透明值小于0.01那么这个方法不可用
 
 - awakeFromNib
   - 从xib或者storyboard加载完毕就会调用
@@ -180,7 +180,7 @@
 class Root: UIView {
     
     /** 所有视图的outlet和action都已经连接,但还未确定.
-     *  可以进行无法再xib或者storyboard无法执行设置
+     *  可以进行无法再xib或者storyboard无法执行的设置
      *  例如: xib创建的UI的属性, 可以在这里进行重新设定
      */
     override func awakeFromNib() {

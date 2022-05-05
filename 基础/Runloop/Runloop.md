@@ -130,8 +130,8 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 >    - kCFRunLoopEntry = (1UL << 0),                 // 即将进入loop
 >    - kCFRunLoopBeforeTimers = (1UL << 1),  // 即将处理Timer
 >    - kCFRunLoopBeforeSources = (1UL << 2), // 即将处理Source
->    - kCFRunLoopBeforeWaiting = (1UL << 5), // 即将进入休息
->    - kCFRunLoopAfterWaiting = (1UL << 6),    // 即将结束休息
+>    - kCFRunLoopBeforeWaiting = (1UL << 5), // 即将进入休眠
+>    - kCFRunLoopAfterWaiting = (1UL << 6),    // 即将结束休眠
 >    - kCFRunLoopExit = (1UL << 7),                    // 退出loop
 >    - kCFRunLoopAllActivities = 0x0FFFFFFFU  // 监听全部状态改变
 
