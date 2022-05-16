@@ -42,8 +42,8 @@ class GreetingViewController : UIViewController {   // View + Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
-        
+        self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 640)
+        self.view.backgroundColor = UIColor.white
         self.setupUIElements()
         self.layout()
     }
@@ -58,9 +58,7 @@ class GreetingViewController : UIViewController {   // View + Controller
     private func _setupButton() {
         self.showGreetingButton = UIButton()
         self.showGreetingButton.setTitle("Click me", for: .normal)
-        self.showGreetingButton.setTitle("You badass", for: .highlighted)
-        self.showGreetingButton.setTitleColor(UIColor.white, for: .normal)
-        self.showGreetingButton.setTitleColor(UIColor.red, for: .highlighted)
+        self.showGreetingButton.setTitleColor(UIColor.black, for: .normal)
         self.showGreetingButton.translatesAutoresizingMaskIntoConstraints = false
         self.showGreetingButton.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
         self.view.addSubview(self.showGreetingButton)
@@ -68,7 +66,8 @@ class GreetingViewController : UIViewController {   // View + Controller
     
     private func _setupLabel() {
         self.greetingLabel = UILabel()
-        self.greetingLabel.textColor = UIColor.white
+        self.greetingLabel.text = "Hi!"
+        self.greetingLabel.textColor = UIColor.darkGray
         self.greetingLabel.textAlignment = .center
         self.greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.greetingLabel)
@@ -83,29 +82,29 @@ class GreetingViewController : UIViewController {   // View + Controller
     
     private func _layoutButton() {
         // layout button at the center of the screen
-        let cs1 = NSLayoutConstraint(item: self.showGreetingButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
-        let cs2 = NSLayoutConstraint(item: self.showGreetingButton, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 1.0)
+        let cs1 = NSLayoutConstraint(item: self.showGreetingButton!, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
+        let cs2 = NSLayoutConstraint(item: self.showGreetingButton!, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 1.0)
         
         self.view.addConstraints([cs1, cs2])
     }
     
     private func _layoutLabel() {
         // layout label at the center, bottom of the screen
-        let cs1 = NSLayoutConstraint(item: self.greetingLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
-        let cs2 = NSLayoutConstraint(item: self.greetingLabel, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -10)
-        let cs3 = NSLayoutConstraint(item: self.greetingLabel, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.70, constant: 0)
+        let cs1 = NSLayoutConstraint(item: self.greetingLabel!, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 1.0)
+        let cs2 = NSLayoutConstraint(item: self.greetingLabel!, attribute: .bottom, relatedBy: .equal, toItem: self.showGreetingButton, attribute: .bottom, multiplier: 1.0, constant: 50)
+        let cs3 = NSLayoutConstraint(item: self.greetingLabel!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.70, constant: 0)
         
         self.view.addConstraints([cs1, cs2, cs3])
     }
     
     @objc func didTapButton(sender: UIButton) {
-        self.greetingLabel.text = "Hello " + self.person.firstName + " " + self.person.lastName
+        self.greetingLabel.text = "Hello " + self.person.firstName + " " + self.person.lastName + "!"
     }
 }
 
-let model = Person(firstName: "Wasin", lastName: "Thonkaew")
+let model = Person(firstName: "John", lastName: "Tom")
 let vc = GreetingViewController()
 vc.person = model
 
-PlaygroundPage.current.liveView = vc.view
+PlaygroundPage.current.liveView = vc
 
