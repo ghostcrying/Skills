@@ -25,7 +25,6 @@
  */
 import Foundation
 
-
 class Solution {
     
     func longestCommonPrefix_1(_ strs: [String]) -> String {

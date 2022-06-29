@@ -72,7 +72,7 @@ class Solution {
         let a = s.map({ String($0)})
         var maxStarts = 0, maxLength = 1
         var methods = Array(repeating: Array(repeating: false, count: s.count), count: s.count)
-        
+                
         for r in 1..<count {
             for l in 0..<r {
                 if a[l] == a[r] && (r - l <= 2 || methods[l + 1][r - 1]) {
