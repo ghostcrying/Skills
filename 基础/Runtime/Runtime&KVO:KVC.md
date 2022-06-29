@@ -50,7 +50,7 @@
   >
   > - 也就是给消息接受者发送-setObject:forKey: 消息，如果value为nil，则给消息接受者发送-removeObjectForKey:消息(也就是移除键值对)
   >
-  > - 如果向一个对象a发送-satValue: forKey:消息，除非能确保a包含key对应的property（即key和A的某个property名字相同），否则必须实现类A或者其父类的-setValue: forUndefinedKey:方法，否则会导致crash。
+  > - 如果向一个对象a发送-setValue: forKey:消息，除非能确保a包含key对应的property（即key和A的某个property名字相同），否则必须实现类A或者其父类的-setValue: forUndefinedKey:方法，否则会导致crash。
 
 - setObject:(ObjectType)... forKey:...
 

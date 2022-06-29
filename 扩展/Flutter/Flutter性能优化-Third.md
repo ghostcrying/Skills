@@ -211,7 +211,7 @@ Flutter 在全局 Window 对象上提供了帧回调机制。我们可以在 Win
 
 这样的话，**当用户界面发生变化时，Flutter 不会修改旧的 Widget 实例，而是会构造新的 Widget 实例**。
 
-Fluuter 框架使用 RenderObjects 管理传统 UI 对象的职责（比如维护布局的状态）。 RenderObjects 在帧之间保持不变， Flutter 的轻量级 Widget 通知框架在状态之间修改 RenderObjects， 而 Flutter Framework 则负责处理其余部分。
+Fluter 框架使用 RenderObjects 管理传统 UI 对象的职责（比如维护布局的状态）。 RenderObjects 在帧之间保持不变， Flutter 的轻量级 Widget 通知框架在状态之间修改 RenderObjects， 而 Flutter Framework 则负责处理其余部分。
 
 ## 1、常规优化
 
@@ -484,7 +484,7 @@ ListView.builder(
 
 对图片压缩或使用在线的网络图片。
 
-## 2、移除冗余的二三库
+## 2、移除冗余的库
 
 随着业务的增加，项目中会引入越来越多的二三方库，其中有不少是功能重复的，甚至是已经不再使用的。移除不再使用的和将相同功能的库进行合并可以进一步减少包体积。
 

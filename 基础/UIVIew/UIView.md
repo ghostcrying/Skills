@@ -180,7 +180,7 @@
 class Root: UIView {
     
     /** 所有视图的outlet和action都已经连接,但还未确定.
-     *  可以进行无法再xib或者storyboard无法执行的设置
+     *  可以进行无法在xib或者storyboard无法执行的设置
      *  例如: xib创建的UI的属性, 可以在这里进行重新设定
      */
     override func awakeFromNib() {

@@ -47,7 +47,8 @@ repeats
 > repeat的timer只有在调用了invalidate之后才会被runloop释放
 >
 > 为了timer和target的生命周期一致，我们在target的dealloc中invalidate timer
-> target被强持有了，不会走dealloc，就内存泄漏了
+>
+> - target被强持有了，不会走dealloc，就内存泄漏了
 
 
 

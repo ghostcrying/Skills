@@ -89,7 +89,7 @@ swift package init (--type library/executable/empty/system module)
 
 #### 注意
 
-- Swift Package Manager只限制Swift语言, 混编状态下会报错
+- Swift Package Manager只限制单一语言, 混编状态下会报错
 
   ```shell
   Target at '.../.../...' contains mixed language source files; feature not supported.

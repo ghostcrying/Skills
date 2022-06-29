@@ -9,7 +9,7 @@
 ###### 特性
 
 - 编写的代码具有运行时、动态特性
-- OC语言函数调用为消息发送,属于动态调用, 在编译阶段并不能决定真正调用哪个函数(编译阶段OC可以调用任何声明过的函数, 而C语言只有声明且实现才可以调用), 只有运行时才会根据函数名找到对应函数调用
+- OC语言函数调用为消息发送, 属于动态调用, 在编译阶段并不能决定真正调用哪个函数(编译阶段OC可以调用任何声明过的函数, 而C语言只有声明且实现才可以调用), 只有运行时才会根据函数名找到对应函数调用
   - 动态类型
     - 只有在运行期间才会确定对象类型
 
@@ -19,7 +19,13 @@
   - 动态加载
     - 根据需求加载所需资源
 
+- 可以从派发机制来理解
 
+  - 直接派发
+
+  - 消息派发
+
+    
 
 
 #### 运用
@@ -109,16 +115,16 @@ struct objc_class {
 
 > `Class`对象， 指向`objc_class`结构体的指针， 也就是这个`Class`的`MetaClass`（元类）
 >
-> - 类的实例对象的 `isa` 指向该类;该类的` isa` 指向该类的 `MetaClass`
-> - `MetaCalss`的isa对象指向`RootMetaCalss`
+> - 类的实例对象的 `isa` 指向该类; 该类的` isa` 指向该类的 `MetaClass`
+> - `MetaClass`的isa对象指向`RootMetaClass`
 >
 > **super_class** Class对象指向父类对象
 >
 > - 如果该类的对象已经是RootClass，那么这个`super_class`指向nil
 >
-> - `MetaCalss`的`SuperClass`指向父类的`MetaCalss`
+> - `MetaClass`的`SuperClass`指向父类的`MetaClass`
 >
-> - `MetaCalss`是`RootMetaCalss`，那么该`MetaClass`的`SuperClass`指向该对象的`RootClass `
+> - `MetaClass`是`RootMetaClass`，那么该`MetaClass`的`SuperClass`指向该对象的`RootClass `
 > - 元类(MetaClass): 类对象的isa指向元类, super_class指向父类的类对象, 而元类的super_class指向了父类的元类, 元类的isa指向自己(形成闭环)
 
 ![](https://upload-images.jianshu.io/upload_images/7980283-2d02894c178d3582.png?imageMogr2/auto-orient/strip|imageView2/2/w/651)
@@ -290,7 +296,7 @@ void eatMethod(id obj, SEL _cmd) {
   - 这个判定, 逐层遍历, 最终指向自身, 所以YES
   - 实例化后, student1的isa指针指向Class, 以此来进行判定
 
-isKindOf： 调用者A，传入参数B， A可以继续向上遍历找到合适的isa， 但是B不会的，
+isKindOf： 调用者A，传入参数B，A可以继续向上遍历找到合适的isa，但是B不会的.
 ```
 
 ###### self&super

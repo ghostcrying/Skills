@@ -113,10 +113,10 @@
   /// 通过clang -rewrite-objc xxx.m, 可以发现num属性转换为了
   struct __Block_byref_num_0 {
     void *__isa;
-  __Block_byref_num_0 *__forwarding; // 指向自身
-   int __flags;
-   int __size;
-   NSInteger num;
+    __Block_byref_num_0 *__forwarding; // 指向自身
+    int __flags;
+    int __size;
+    NSInteger num;
   };
   
   __attribute__((__blocks__(byref))) __Block_byref_num_0 num = {(void*)0,(__Block_byref_num_0 *)&num, 0, sizeof(__Block_byref_num_0), 30000};
@@ -179,9 +179,9 @@
 
 > block的循环引用为自循环引用
 >
-> 部分系统block并不会引起循环引用: UIAnimate, GCD...
+> 部分系统层级的Block并不会引起循环引用: UIAnimate, GCD...
 >
-> 同样Masonry中的block是栈block, 并不构成循环引用的条件
+> 同样Masonry中的Block是栈Block, 并不构成循环引用的条件
 
 ```
 案例：常见的循环引用 self持有block block持有self
@@ -230,7 +230,7 @@ self.block();
 ###### 方案三
 
 ```
-# 通过传参的方式: 参数vc的作用于就是block代码块的范围, 执行完毕后, VC置空自然可以释放self
+# 通过传参的方式: 参数vc的作用域就是block代码块的范围, 执行完毕后, VC置空自然可以释放self
 self.block = ^(ViewController *vc){
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"%@", vc.name);
