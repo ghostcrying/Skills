@@ -5,6 +5,7 @@
 //  Created by Putao0474 on 2022/6/29.
 //
 /**
+ **LeetCode: 6.Z字形变换
  将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。
 
  比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
@@ -86,10 +87,10 @@ class Solution {
         var lists = Array(repeating: "", count: numRows)
         for (i, c) in s.enumerated() {
             let index = i % (2 * numRows - 2)
-            if index >= numRows {
-                lists[numRows*2-2-index].append(c)
-            } else {
+            if index < numRows {
                 lists[index].append(c)
+            } else {
+                lists[numRows*2-2-index].append(c)
             }
         }
         return lists.joined()

@@ -14,6 +14,14 @@
 		21835DFF286C3B8F00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DFE286C3B8F00EF81DD /* main.swift */; };
 		21835E0A286C49AD00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E09286C49AD00EF81DD /* main.swift */; };
 		21835E15286C5EAC00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E14286C5EAC00EF81DD /* main.swift */; };
+		21835E20286D358000EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E1F286D358000EF81DD /* main.swift */; };
+		21835E2B286D3C8A00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E2A286D3C8A00EF81DD /* main.swift */; };
+		21835E36286D49D600EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E35286D49D600EF81DD /* main.swift */; };
+		21835E41286D4AD800EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E40286D4AD800EF81DD /* main.swift */; };
+		21835E4C286D7D0700EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E4B286D7D0700EF81DD /* main.swift */; };
+		21835E57286D985D00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E56286D985D00EF81DD /* main.swift */; };
+		21835E62286DABD600EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E61286DABD600EF81DD /* main.swift */; };
+		21835E6D286DB77F00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E6C286DB77F00EF81DD /* main.swift */; };
 		C8078234286CA41600978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8078233286CA41600978E82 /* main.swift */; };
 		C807823F286CA68400978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C807823E286CA68400978E82 /* main.swift */; };
 		C8C43780286B49A1003177CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C4377F286B49A1003177CF /* main.swift */; };
@@ -85,6 +93,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		21835E1B286D358000EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E26286D3C8A00EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E31286D49D600EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E3C286D4AD800EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E47286D7D0700EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E52286D985D00EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E5D286DABD600EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21835E68286DB77F00EF81DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		C807822F286CA41600978E82 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +227,22 @@
 		21835E09286C49AD00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835E12286C5EAC00EF81DD /* restore-ip-addresses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "restore-ip-addresses"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21835E14286C5EAC00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E1D286D358000EF81DD /* pascals-triangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pascals-triangle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E1F286D358000EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E28286D3C8A00EF81DD /* find-pivot-index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "find-pivot-index"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E2A286D3C8A00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E33286D49D600EF81DD /* container-with-most-water */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "container-with-most-water"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E35286D49D600EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E3E286D4AD800EF81DD /* trapping-rain-water */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "trapping-rain-water"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E40286D4AD800EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E49286D7D0700EF81DD /* trapping-rain-water-ii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "trapping-rain-water-ii"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E4B286D7D0700EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E54286D985D00EF81DD /* 3sum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3sum; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E56286D985D00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E5F286DABD600EF81DD /* diagonal-traverse */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "diagonal-traverse"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E61286DABD600EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21835E6A286DB77F00EF81DD /* spiral-matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "spiral-matrix"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21835E6C286DB77F00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C8078231286CA41600978E82 /* basic-calculator-ii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "basic-calculator-ii"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8078233286CA41600978E82 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C807823C286CA68400978E82 /* longest-string-chain */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "longest-string-chain"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +299,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		21835E0F286C5EAC00EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E1A286D358000EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E25286D3C8A00EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E30286D49D600EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E3B286D4AD800EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E46286D7D0700EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E51286D985D00EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E5C286DABD600EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E67286DB77F00EF81DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,6 +455,70 @@
 			path = "restore-ip-addresses";
 			sourceTree = "<group>";
 		};
+		21835E1E286D358000EF81DD /* pascals-triangle */ = {
+			isa = PBXGroup;
+			children = (
+				21835E1F286D358000EF81DD /* main.swift */,
+			);
+			path = "pascals-triangle";
+			sourceTree = "<group>";
+		};
+		21835E29286D3C8A00EF81DD /* find-pivot-index */ = {
+			isa = PBXGroup;
+			children = (
+				21835E2A286D3C8A00EF81DD /* main.swift */,
+			);
+			path = "find-pivot-index";
+			sourceTree = "<group>";
+		};
+		21835E34286D49D600EF81DD /* container-with-most-water */ = {
+			isa = PBXGroup;
+			children = (
+				21835E35286D49D600EF81DD /* main.swift */,
+			);
+			path = "container-with-most-water";
+			sourceTree = "<group>";
+		};
+		21835E3F286D4AD800EF81DD /* trapping-rain-water */ = {
+			isa = PBXGroup;
+			children = (
+				21835E40286D4AD800EF81DD /* main.swift */,
+			);
+			path = "trapping-rain-water";
+			sourceTree = "<group>";
+		};
+		21835E4A286D7D0700EF81DD /* trapping-rain-water-ii */ = {
+			isa = PBXGroup;
+			children = (
+				21835E4B286D7D0700EF81DD /* main.swift */,
+			);
+			path = "trapping-rain-water-ii";
+			sourceTree = "<group>";
+		};
+		21835E55286D985D00EF81DD /* 3sum */ = {
+			isa = PBXGroup;
+			children = (
+				21835E56286D985D00EF81DD /* main.swift */,
+			);
+			path = 3sum;
+			sourceTree = "<group>";
+		};
+		21835E60286DABD600EF81DD /* diagonal-traverse */ = {
+			isa = PBXGroup;
+			children = (
+				21835E61286DABD600EF81DD /* main.swift */,
+			);
+			path = "diagonal-traverse";
+			sourceTree = "<group>";
+		};
+		21835E6B286DB77F00EF81DD /* spiral-matrix */ = {
+			isa = PBXGroup;
+			children = (
+				21835E6C286DB77F00EF81DD /* main.swift */,
+			);
+			path = "spiral-matrix";
+			sourceTree = "<group>";
+		};
 		C8078232286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +550,14 @@
 				21835E13286C5EAC00EF81DD /* restore-ip-addresses */,
 				C8078232286CA41600978E82 /* basic-calculator-ii */,
 				C807823D286CA68400978E82 /* longest-string-chain */,
+				21835E1E286D358000EF81DD /* pascals-triangle */,
+				21835E29286D3C8A00EF81DD /* find-pivot-index */,
+				21835E34286D49D600EF81DD /* container-with-most-water */,
+				21835E3F286D4AD800EF81DD /* trapping-rain-water */,
+				21835E4A286D7D0700EF81DD /* trapping-rain-water-ii */,
+				21835E55286D985D00EF81DD /* 3sum */,
+				21835E60286DABD600EF81DD /* diagonal-traverse */,
+				21835E6B286DB77F00EF81DD /* spiral-matrix */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -353,6 +577,14 @@
 				21835E12286C5EAC00EF81DD /* restore-ip-addresses */,
 				C8078231286CA41600978E82 /* basic-calculator-ii */,
 				C807823C286CA68400978E82 /* longest-string-chain */,
+				21835E1D286D358000EF81DD /* pascals-triangle */,
+				21835E28286D3C8A00EF81DD /* find-pivot-index */,
+				21835E33286D49D600EF81DD /* container-with-most-water */,
+				21835E3E286D4AD800EF81DD /* trapping-rain-water */,
+				21835E49286D7D0700EF81DD /* trapping-rain-water-ii */,
+				21835E54286D985D00EF81DD /* 3sum */,
+				21835E5F286DABD600EF81DD /* diagonal-traverse */,
+				21835E6A286DB77F00EF81DD /* spiral-matrix */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,6 +735,142 @@
 			productReference = 21835E12286C5EAC00EF81DD /* restore-ip-addresses */;
 			productType = "com.apple.product-type.tool";
 		};
+		21835E1C286D358000EF81DD /* pascals-triangle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E23286D358000EF81DD /* Build configuration list for PBXNativeTarget "pascals-triangle" */;
+			buildPhases = (
+				21835E19286D358000EF81DD /* Sources */,
+				21835E1A286D358000EF81DD /* Frameworks */,
+				21835E1B286D358000EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pascals-triangle";
+			productName = "pascals-triangle";
+			productReference = 21835E1D286D358000EF81DD /* pascals-triangle */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E27286D3C8A00EF81DD /* find-pivot-index */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E2C286D3C8A00EF81DD /* Build configuration list for PBXNativeTarget "find-pivot-index" */;
+			buildPhases = (
+				21835E24286D3C8A00EF81DD /* Sources */,
+				21835E25286D3C8A00EF81DD /* Frameworks */,
+				21835E26286D3C8A00EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "find-pivot-index";
+			productName = "find-pivot-index";
+			productReference = 21835E28286D3C8A00EF81DD /* find-pivot-index */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E32286D49D600EF81DD /* container-with-most-water */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E37286D49D600EF81DD /* Build configuration list for PBXNativeTarget "container-with-most-water" */;
+			buildPhases = (
+				21835E2F286D49D600EF81DD /* Sources */,
+				21835E30286D49D600EF81DD /* Frameworks */,
+				21835E31286D49D600EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "container-with-most-water";
+			productName = "container-with-most-water";
+			productReference = 21835E33286D49D600EF81DD /* container-with-most-water */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E3D286D4AD800EF81DD /* trapping-rain-water */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E42286D4AD800EF81DD /* Build configuration list for PBXNativeTarget "trapping-rain-water" */;
+			buildPhases = (
+				21835E3A286D4AD800EF81DD /* Sources */,
+				21835E3B286D4AD800EF81DD /* Frameworks */,
+				21835E3C286D4AD800EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "trapping-rain-water";
+			productName = "trapping-rain-water";
+			productReference = 21835E3E286D4AD800EF81DD /* trapping-rain-water */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E48286D7D0700EF81DD /* trapping-rain-water-ii */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E4D286D7D0700EF81DD /* Build configuration list for PBXNativeTarget "trapping-rain-water-ii" */;
+			buildPhases = (
+				21835E45286D7D0700EF81DD /* Sources */,
+				21835E46286D7D0700EF81DD /* Frameworks */,
+				21835E47286D7D0700EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "trapping-rain-water-ii";
+			productName = "trapping-rain-water-ii";
+			productReference = 21835E49286D7D0700EF81DD /* trapping-rain-water-ii */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E53286D985D00EF81DD /* 3sum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E58286D985D00EF81DD /* Build configuration list for PBXNativeTarget "3sum" */;
+			buildPhases = (
+				21835E50286D985D00EF81DD /* Sources */,
+				21835E51286D985D00EF81DD /* Frameworks */,
+				21835E52286D985D00EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 3sum;
+			productName = 3sum;
+			productReference = 21835E54286D985D00EF81DD /* 3sum */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E5E286DABD600EF81DD /* diagonal-traverse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E63286DABD600EF81DD /* Build configuration list for PBXNativeTarget "diagonal-traverse" */;
+			buildPhases = (
+				21835E5B286DABD600EF81DD /* Sources */,
+				21835E5C286DABD600EF81DD /* Frameworks */,
+				21835E5D286DABD600EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "diagonal-traverse";
+			productName = "diagonal-traverse";
+			productReference = 21835E5F286DABD600EF81DD /* diagonal-traverse */;
+			productType = "com.apple.product-type.tool";
+		};
+		21835E69286DB77F00EF81DD /* spiral-matrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21835E6E286DB77F00EF81DD /* Build configuration list for PBXNativeTarget "spiral-matrix" */;
+			buildPhases = (
+				21835E66286DB77F00EF81DD /* Sources */,
+				21835E67286DB77F00EF81DD /* Frameworks */,
+				21835E68286DB77F00EF81DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "spiral-matrix";
+			productName = "spiral-matrix";
+			productReference = 21835E6A286DB77F00EF81DD /* spiral-matrix */;
+			productType = "com.apple.product-type.tool";
+		};
 		C8078230286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8078237286CA41600978E82 /* Build configuration list for PBXNativeTarget "basic-calculator-ii" */;
@@ -595,7 +963,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					21835DCF286BE77700EF81DD = {
@@ -617,6 +985,30 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					21835E11286C5EAC00EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E1C286D358000EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E27286D3C8A00EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E32286D49D600EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E3D286D4AD800EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E48286D7D0700EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E53286D985D00EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E5E286DABD600EF81DD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21835E69286DB77F00EF81DD = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					C8078230286CA41600978E82 = {
@@ -661,6 +1053,14 @@
 				21835E11286C5EAC00EF81DD /* restore-ip-addresses */,
 				C8078230286CA41600978E82 /* basic-calculator-ii */,
 				C807823B286CA68400978E82 /* longest-string-chain */,
+				21835E1C286D358000EF81DD /* pascals-triangle */,
+				21835E27286D3C8A00EF81DD /* find-pivot-index */,
+				21835E32286D49D600EF81DD /* container-with-most-water */,
+				21835E3D286D4AD800EF81DD /* trapping-rain-water */,
+				21835E48286D7D0700EF81DD /* trapping-rain-water-ii */,
+				21835E53286D985D00EF81DD /* 3sum */,
+				21835E5E286DABD600EF81DD /* diagonal-traverse */,
+				21835E69286DB77F00EF81DD /* spiral-matrix */,
 			);
 		};
 /* End PBXProject section */
@@ -719,6 +1119,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				21835E15286C5EAC00EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E19286D358000EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E20286D358000EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E24286D3C8A00EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E2B286D3C8A00EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E2F286D49D600EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E36286D49D600EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E3A286D4AD800EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E41286D4AD800EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E45286D7D0700EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E4C286D7D0700EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E50286D985D00EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E57286D985D00EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E5B286DABD600EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E62286DABD600EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835E66286DB77F00EF81DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21835E6D286DB77F00EF81DD /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,6 +1360,166 @@
 			name = Debug;
 		};
 		21835E18286C5EAC00EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E21286D358000EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E22286D358000EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E2D286D3C8A00EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E2E286D3C8A00EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E38286D49D600EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E39286D49D600EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E43286D4AD800EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E44286D4AD800EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E4E286D7D0700EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E4F286D7D0700EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E59286D985D00EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E5A286D985D00EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E64286DABD600EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E65286DABD600EF81DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21835E6F286DB77F00EF81DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21835E70286DB77F00EF81DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1172,6 +1796,78 @@
 			buildConfigurations = (
 				21835E17286C5EAC00EF81DD /* Debug */,
 				21835E18286C5EAC00EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E23286D358000EF81DD /* Build configuration list for PBXNativeTarget "pascals-triangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E21286D358000EF81DD /* Debug */,
+				21835E22286D358000EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E2C286D3C8A00EF81DD /* Build configuration list for PBXNativeTarget "find-pivot-index" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E2D286D3C8A00EF81DD /* Debug */,
+				21835E2E286D3C8A00EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E37286D49D600EF81DD /* Build configuration list for PBXNativeTarget "container-with-most-water" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E38286D49D600EF81DD /* Debug */,
+				21835E39286D49D600EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E42286D4AD800EF81DD /* Build configuration list for PBXNativeTarget "trapping-rain-water" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E43286D4AD800EF81DD /* Debug */,
+				21835E44286D4AD800EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E4D286D7D0700EF81DD /* Build configuration list for PBXNativeTarget "trapping-rain-water-ii" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E4E286D7D0700EF81DD /* Debug */,
+				21835E4F286D7D0700EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E58286D985D00EF81DD /* Build configuration list for PBXNativeTarget "3sum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E59286D985D00EF81DD /* Debug */,
+				21835E5A286D985D00EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E63286DABD600EF81DD /* Build configuration list for PBXNativeTarget "diagonal-traverse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E64286DABD600EF81DD /* Debug */,
+				21835E65286DABD600EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21835E6E286DB77F00EF81DD /* Build configuration list for PBXNativeTarget "spiral-matrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21835E6F286DB77F00EF81DD /* Debug */,
+				21835E70286DB77F00EF81DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
