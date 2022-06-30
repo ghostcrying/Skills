@@ -37,6 +37,8 @@ let lists_2 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 
 class Solution {
     
+    // 可以模拟螺旋矩阵的路径。初始位置是矩阵的左上角，初始方向是向右，当路径超出界限或者进入之前访问过的位置时，顺时针旋转，进入下一个方向。
+    // 判断路径是否进入之前访问过的位置需要使用一个与输入矩阵大小相同的辅助矩阵visited，其中的每个元素表示该位置是否被访问过。当一个元素被访问时，将visited 中的对应位置的元素设为已访问
     func spiralOrder_1(_ matrix: [[Int]]) -> [Int] {
         let m = matrix.count
         let n = matrix[0].count
@@ -58,6 +60,7 @@ class Solution {
         return results
     }
     
+    // 回字形一层一层遍历
     func spiralOrder_2(_ matrix: [[Int]]) -> [Int] {
         let m = matrix.count
         let n = matrix[0].count
