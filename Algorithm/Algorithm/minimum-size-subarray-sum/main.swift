@@ -35,13 +35,54 @@
  如果你已经实现 O(n) 时间复杂度的解法, 请尝试设计一个 O(n log(n)) 时间复杂度的解法。
  */
 
+/**
+ ***暴力解法
+ *  - 直接遍历
+ ***双指针法:  移动窗口
+ *  - 左右边界: 初始 l = r = 0, sum = 0, 进行循环移动外循环r移动, 内循环l移动
+ */
+
 import Foundation
 
 class Solution {
-    
-    func minSubArrayLen(_ target: Int, _ nums: [Int]) -> Int {
-
+    /// [1, 2, 9, 11, 10, 4, 5, 1] // 10
+    // 暴力点
+    func minSubArrayLen_1(_ target: Int, _ nums: [Int]) -> Int {
+        let length = nums.count
+        var result = length + 1
+        for i in 0..<length {
+            var sum = 0
+            for j in i..<length {
+                sum += nums[j]
+                if sum >= target {
+                    result = min(result, j - i + 1)
+                    break
+                }
+            }
+        }
+        return (result == length + 1) ? 0 : result
+    }
+    // 双指针
+    func minSubArrayLen_2(_ target: Int, _ nums: [Int]) -> Int {
+        let length = nums.count
+        var l = 0, r = 0
+        var sum = 0, result = length + 1
+        while r < length {
+            sum += nums[r]
+            while sum >= target {
+                result = min(result, r - l + 1)
+                sum -= nums[l]
+                l += 1
+            }
+            r += 1
+        }
+        return (result == length + 1) ? 0 : result
     }
 }
 
+print(Solution().minSubArrayLen_1(7, [2, 3, 1, 2, 4, 3]))
+print(Solution().minSubArrayLen_2(7, [2, 3, 1, 2, 4, 3]))
+
+print(Solution().minSubArrayLen_1(7, [1, 2, 9, 11, 10, 4, 5, 1]))
+print(Solution().minSubArrayLen_2(7, [1, 2, 9, 11, 10, 4, 5, 1]))
 

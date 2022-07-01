@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213E98C0286E91E800FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98BF286E91E800FEF560 /* main.swift */; };
+		213E98CB286E93DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98CA286E93DA00FEF560 /* main.swift */; };
+		213E98D6286EC4DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98D5286EC4DA00FEF560 /* main.swift */; };
 		21835DD3286BE77700EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DD2286BE77700EF81DD /* main.swift */; };
 		21835DDE286C0E7600EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DDD286C0E7600EF81DD /* main.swift */; };
 		21835DE9286C17CE00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DE8286C17CE00EF81DD /* main.swift */; };
@@ -31,6 +34,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		213E98BB286E91E800FEF560 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		213E98C6286E93DA00FEF560 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		213E98D1286EC4DA00FEF560 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		21835DCE286BE77700EF81DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +253,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		213E98BD286E91E800FEF560 /* implement-stack-using-queues */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "implement-stack-using-queues"; sourceTree = BUILT_PRODUCTS_DIR; };
+		213E98BF286E91E800FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		213E98C8286E93DA00FEF560 /* number-of-recent-calls */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "number-of-recent-calls"; sourceTree = BUILT_PRODUCTS_DIR; };
+		213E98CA286E93DA00FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		213E98D3286EC4DA00FEF560 /* task-scheduler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "task-scheduler"; sourceTree = BUILT_PRODUCTS_DIR; };
+		213E98D5286EC4DA00FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835DD0286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "longest-substring-without-repeating-characters"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21835DD2286BE77700EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835DDB286C0E7600EF81DD /* implement-strstr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "implement-strstr"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +304,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		213E98BA286E91E800FEF560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98C5286E93DA00FEF560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98D0286EC4DA00FEF560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21835DCD286BE77700EF81DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +475,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213E98BE286E91E800FEF560 /* implement-stack-using-queues */ = {
+			isa = PBXGroup;
+			children = (
+				213E98BF286E91E800FEF560 /* main.swift */,
+			);
+			path = "implement-stack-using-queues";
+			sourceTree = "<group>";
+		};
+		213E98C9286E93DA00FEF560 /* number-of-recent-calls */ = {
+			isa = PBXGroup;
+			children = (
+				213E98CA286E93DA00FEF560 /* main.swift */,
+			);
+			path = "number-of-recent-calls";
+			sourceTree = "<group>";
+		};
+		213E98D4286EC4DA00FEF560 /* task-scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				213E98D5286EC4DA00FEF560 /* main.swift */,
+			);
+			path = "task-scheduler";
+			sourceTree = "<group>";
+		};
 		21835DD1286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +667,9 @@
 				21835E60286DABD600EF81DD /* diagonal-traverse */,
 				21835E6B286DB77F00EF81DD /* spiral-matrix */,
 				21835E76286DCAD500EF81DD /* minimum-size-subarray-sum */,
+				213E98BE286E91E800FEF560 /* implement-stack-using-queues */,
+				213E98C9286E93DA00FEF560 /* number-of-recent-calls */,
+				213E98D4286EC4DA00FEF560 /* task-scheduler */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -614,6 +698,9 @@
 				21835E5F286DABD600EF81DD /* diagonal-traverse */,
 				21835E6A286DB77F00EF81DD /* spiral-matrix */,
 				21835E75286DCAD500EF81DD /* minimum-size-subarray-sum */,
+				213E98BD286E91E800FEF560 /* implement-stack-using-queues */,
+				213E98C8286E93DA00FEF560 /* number-of-recent-calls */,
+				213E98D3286EC4DA00FEF560 /* task-scheduler */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -645,6 +732,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		213E98BC286E91E800FEF560 /* implement-stack-using-queues */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213E98C3286E91E800FEF560 /* Build configuration list for PBXNativeTarget "implement-stack-using-queues" */;
+			buildPhases = (
+				213E98B9286E91E800FEF560 /* Sources */,
+				213E98BA286E91E800FEF560 /* Frameworks */,
+				213E98BB286E91E800FEF560 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "implement-stack-using-queues";
+			productName = "implement-stack-using-queues";
+			productReference = 213E98BD286E91E800FEF560 /* implement-stack-using-queues */;
+			productType = "com.apple.product-type.tool";
+		};
+		213E98C7286E93DA00FEF560 /* number-of-recent-calls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213E98CC286E93DA00FEF560 /* Build configuration list for PBXNativeTarget "number-of-recent-calls" */;
+			buildPhases = (
+				213E98C4286E93DA00FEF560 /* Sources */,
+				213E98C5286E93DA00FEF560 /* Frameworks */,
+				213E98C6286E93DA00FEF560 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "number-of-recent-calls";
+			productName = "number-of-recent-calls";
+			productReference = 213E98C8286E93DA00FEF560 /* number-of-recent-calls */;
+			productType = "com.apple.product-type.tool";
+		};
+		213E98D2286EC4DA00FEF560 /* task-scheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213E98D7286EC4DA00FEF560 /* Build configuration list for PBXNativeTarget "task-scheduler" */;
+			buildPhases = (
+				213E98CF286EC4DA00FEF560 /* Sources */,
+				213E98D0286EC4DA00FEF560 /* Frameworks */,
+				213E98D1286EC4DA00FEF560 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "task-scheduler";
+			productName = "task-scheduler";
+			productReference = 213E98D3286EC4DA00FEF560 /* task-scheduler */;
+			productType = "com.apple.product-type.tool";
+		};
 		21835DCF286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21835DD6286BE77700EF81DD /* Build configuration list for PBXNativeTarget "longest-substring-without-repeating-characters" */;
@@ -1012,6 +1150,15 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					213E98BC286E91E800FEF560 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					213E98C7286E93DA00FEF560 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					213E98D2286EC4DA00FEF560 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					21835DCF286BE77700EF81DD = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -1111,11 +1258,38 @@
 				21835E5E286DABD600EF81DD /* diagonal-traverse */,
 				21835E69286DB77F00EF81DD /* spiral-matrix */,
 				21835E74286DCAD500EF81DD /* minimum-size-subarray-sum */,
+				213E98BC286E91E800FEF560 /* implement-stack-using-queues */,
+				213E98C7286E93DA00FEF560 /* number-of-recent-calls */,
+				213E98D2286EC4DA00FEF560 /* task-scheduler */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		213E98B9286E91E800FEF560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213E98C0286E91E800FEF560 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98C4286E93DA00FEF560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213E98CB286E93DA00FEF560 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98CF286EC4DA00FEF560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213E98D6286EC4DA00FEF560 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21835DCC286BE77700EF81DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1287,6 +1461,66 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		213E98C1286E91E800FEF560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		213E98C2286E91E800FEF560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		213E98CD286E93DA00FEF560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		213E98CE286E93DA00FEF560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		213E98D8286EC4DA00FEF560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		213E98D9286EC4DA00FEF560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		21835DD4286BE77700EF81DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1815,6 +2049,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		213E98C3286E91E800FEF560 /* Build configuration list for PBXNativeTarget "implement-stack-using-queues" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213E98C1286E91E800FEF560 /* Debug */,
+				213E98C2286E91E800FEF560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213E98CC286E93DA00FEF560 /* Build configuration list for PBXNativeTarget "number-of-recent-calls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213E98CD286E93DA00FEF560 /* Debug */,
+				213E98CE286E93DA00FEF560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213E98D7286EC4DA00FEF560 /* Build configuration list for PBXNativeTarget "task-scheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213E98D8286EC4DA00FEF560 /* Debug */,
+				213E98D9286EC4DA00FEF560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		21835DD6286BE77700EF81DD /* Build configuration list for PBXNativeTarget "longest-substring-without-repeating-characters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
