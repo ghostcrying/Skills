@@ -10,6 +10,7 @@
 		213E98C0286E91E800FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98BF286E91E800FEF560 /* main.swift */; };
 		213E98CB286E93DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98CA286E93DA00FEF560 /* main.swift */; };
 		213E98D6286EC4DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98D5286EC4DA00FEF560 /* main.swift */; };
+		213E98E1286EF79400FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98E0286EF79400FEF560 /* main.swift */; };
 		21835DD3286BE77700EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DD2286BE77700EF81DD /* main.swift */; };
 		21835DDE286C0E7600EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DDD286C0E7600EF81DD /* main.swift */; };
 		21835DE9286C17CE00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835DE8286C17CE00EF81DD /* main.swift */; };
@@ -53,6 +54,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		213E98D1286EC4DA00FEF560 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		213E98DC286EF79400FEF560 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -259,6 +269,8 @@
 		213E98CA286E93DA00FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		213E98D3286EC4DA00FEF560 /* task-scheduler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "task-scheduler"; sourceTree = BUILT_PRODUCTS_DIR; };
 		213E98D5286EC4DA00FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		213E98DE286EF79400FEF560 /* design-circular-deque */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "design-circular-deque"; sourceTree = BUILT_PRODUCTS_DIR; };
+		213E98E0286EF79400FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835DD0286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "longest-substring-without-repeating-characters"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21835DD2286BE77700EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835DDB286C0E7600EF81DD /* implement-strstr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "implement-strstr"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +331,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		213E98D0286EC4DA00FEF560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98DB286EF79400FEF560 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -499,6 +518,14 @@
 			path = "task-scheduler";
 			sourceTree = "<group>";
 		};
+		213E98DF286EF79400FEF560 /* design-circular-deque */ = {
+			isa = PBXGroup;
+			children = (
+				213E98E0286EF79400FEF560 /* main.swift */,
+			);
+			path = "design-circular-deque";
+			sourceTree = "<group>";
+		};
 		21835DD1286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +697,7 @@
 				213E98BE286E91E800FEF560 /* implement-stack-using-queues */,
 				213E98C9286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D4286EC4DA00FEF560 /* task-scheduler */,
+				213E98DF286EF79400FEF560 /* design-circular-deque */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -701,6 +729,7 @@
 				213E98BD286E91E800FEF560 /* implement-stack-using-queues */,
 				213E98C8286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D3286EC4DA00FEF560 /* task-scheduler */,
+				213E98DE286EF79400FEF560 /* design-circular-deque */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -781,6 +810,23 @@
 			name = "task-scheduler";
 			productName = "task-scheduler";
 			productReference = 213E98D3286EC4DA00FEF560 /* task-scheduler */;
+			productType = "com.apple.product-type.tool";
+		};
+		213E98DD286EF79400FEF560 /* design-circular-deque */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213E98E2286EF79400FEF560 /* Build configuration list for PBXNativeTarget "design-circular-deque" */;
+			buildPhases = (
+				213E98DA286EF79400FEF560 /* Sources */,
+				213E98DB286EF79400FEF560 /* Frameworks */,
+				213E98DC286EF79400FEF560 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "design-circular-deque";
+			productName = "design-circular-deque";
+			productReference = 213E98DE286EF79400FEF560 /* design-circular-deque */;
 			productType = "com.apple.product-type.tool";
 		};
 		21835DCF286BE77700EF81DD /* longest-substring-without-repeating-characters */ = {
@@ -1159,6 +1205,9 @@
 					213E98D2286EC4DA00FEF560 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					213E98DD286EF79400FEF560 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					21835DCF286BE77700EF81DD = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -1261,6 +1310,7 @@
 				213E98BC286E91E800FEF560 /* implement-stack-using-queues */,
 				213E98C7286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D2286EC4DA00FEF560 /* task-scheduler */,
+				213E98DD286EF79400FEF560 /* design-circular-deque */,
 			);
 		};
 /* End PBXProject section */
@@ -1287,6 +1337,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				213E98D6286EC4DA00FEF560 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213E98DA286EF79400FEF560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213E98E1286EF79400FEF560 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1512,6 +1570,26 @@
 			name = Debug;
 		};
 		213E98D9286EC4DA00FEF560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		213E98E3286EF79400FEF560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		213E98E4286EF79400FEF560 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -2072,6 +2150,15 @@
 			buildConfigurations = (
 				213E98D8286EC4DA00FEF560 /* Debug */,
 				213E98D9286EC4DA00FEF560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213E98E2286EF79400FEF560 /* Build configuration list for PBXNativeTarget "design-circular-deque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213E98E3286EF79400FEF560 /* Debug */,
+				213E98E4286EF79400FEF560 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

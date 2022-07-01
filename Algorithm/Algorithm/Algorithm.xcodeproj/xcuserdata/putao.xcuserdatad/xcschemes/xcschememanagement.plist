@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>design-circular-deque.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>diagonal-traverse.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
