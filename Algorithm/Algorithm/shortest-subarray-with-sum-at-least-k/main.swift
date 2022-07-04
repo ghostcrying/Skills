@@ -64,7 +64,7 @@ class Solution {
         var indexs = [Int](repeating: 0, count: n + 1)
         for i in 0..<n+1 {
             // 因为要维护一个递增队列，故如果最新的元素比队尾小，影响单调性，把队尾元素弹出
-            while front < result && preSum[i] < preSum[indexs[rear - 1]] {
+            while front < rear && preSum[i] < preSum[indexs[rear - 1]] {
                 rear -= 1
             }
             indexs[rear] = i
