@@ -27,6 +27,9 @@
 		21835E62286DABD600EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E61286DABD600EF81DD /* main.swift */; };
 		21835E6D286DB77F00EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E6C286DB77F00EF81DD /* main.swift */; };
 		21835E78286DCAD500EF81DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21835E77286DCAD500EF81DD /* main.swift */; };
+		21FB8633287294160088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB8632287294160088BC88 /* main.swift */; };
+		21FB863E2872BF780088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB863D2872BF780088BC88 /* main.swift */; };
+		21FB866B2872F83C0088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB866A2872F83C0088BC88 /* main.swift */; };
 		C8078234286CA41600978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8078233286CA41600978E82 /* main.swift */; };
 		C807823F286CA68400978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C807823E286CA68400978E82 /* main.swift */; };
 		C8C43780286B49A1003177CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C4377F286B49A1003177CF /* main.swift */; };
@@ -215,6 +218,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		21FB862E287294160088BC88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21FB86392872BF780088BC88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21FB86662872F83C0088BC88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		C807822F286CA41600978E82 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +333,12 @@
 		21835E6C286DB77F00EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21835E75286DCAD500EF81DD /* minimum-size-subarray-sum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "minimum-size-subarray-sum"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21835E77286DCAD500EF81DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21FB8630287294160088BC88 /* design-circular-queue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "design-circular-queue"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FB8632287294160088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21FB863B2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "max-sum-of-rectangle-no-larger-than-k"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FB863D2872BF780088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21FB86682872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "shortest-subarray-with-sum-at-least-k"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FB866A2872F83C0088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C8078231286CA41600978E82 /* basic-calculator-ii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "basic-calculator-ii"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8078233286CA41600978E82 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C807823C286CA68400978E82 /* longest-string-chain */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "longest-string-chain"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,6 +486,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		21835E72286DCAD500EF81DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB862D287294160088BC88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB86382872BF780088BC88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB86652872F83C0088BC88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -654,6 +711,30 @@
 			path = "minimum-size-subarray-sum";
 			sourceTree = "<group>";
 		};
+		21FB8631287294160088BC88 /* design-circular-queue */ = {
+			isa = PBXGroup;
+			children = (
+				21FB8632287294160088BC88 /* main.swift */,
+			);
+			path = "design-circular-queue";
+			sourceTree = "<group>";
+		};
+		21FB863C2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */ = {
+			isa = PBXGroup;
+			children = (
+				21FB863D2872BF780088BC88 /* main.swift */,
+			);
+			path = "max-sum-of-rectangle-no-larger-than-k";
+			sourceTree = "<group>";
+		};
+		21FB86692872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */ = {
+			isa = PBXGroup;
+			children = (
+				21FB866A2872F83C0088BC88 /* main.swift */,
+			);
+			path = "shortest-subarray-with-sum-at-least-k";
+			sourceTree = "<group>";
+		};
 		C8078232286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +779,9 @@
 				213E98C9286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D4286EC4DA00FEF560 /* task-scheduler */,
 				213E98DF286EF79400FEF560 /* design-circular-deque */,
+				21FB8631287294160088BC88 /* design-circular-queue */,
+				21FB863C2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */,
+				21FB86692872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -730,6 +814,9 @@
 				213E98C8286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D3286EC4DA00FEF560 /* task-scheduler */,
 				213E98DE286EF79400FEF560 /* design-circular-deque */,
+				21FB8630287294160088BC88 /* design-circular-queue */,
+				21FB863B2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */,
+				21FB86682872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1101,6 +1188,57 @@
 			productReference = 21835E75286DCAD500EF81DD /* minimum-size-subarray-sum */;
 			productType = "com.apple.product-type.tool";
 		};
+		21FB862F287294160088BC88 /* design-circular-queue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FB8636287294160088BC88 /* Build configuration list for PBXNativeTarget "design-circular-queue" */;
+			buildPhases = (
+				21FB862C287294160088BC88 /* Sources */,
+				21FB862D287294160088BC88 /* Frameworks */,
+				21FB862E287294160088BC88 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "design-circular-queue";
+			productName = "design-circular-queue";
+			productReference = 21FB8630287294160088BC88 /* design-circular-queue */;
+			productType = "com.apple.product-type.tool";
+		};
+		21FB863A2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FB863F2872BF780088BC88 /* Build configuration list for PBXNativeTarget "max-sum-of-rectangle-no-larger-than-k" */;
+			buildPhases = (
+				21FB86372872BF780088BC88 /* Sources */,
+				21FB86382872BF780088BC88 /* Frameworks */,
+				21FB86392872BF780088BC88 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "max-sum-of-rectangle-no-larger-than-k";
+			productName = "max-sum-of-rectangle-no-larger-than-k";
+			productReference = 21FB863B2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */;
+			productType = "com.apple.product-type.tool";
+		};
+		21FB86672872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FB866C2872F83C0088BC88 /* Build configuration list for PBXNativeTarget "shortest-subarray-with-sum-at-least-k" */;
+			buildPhases = (
+				21FB86642872F83C0088BC88 /* Sources */,
+				21FB86652872F83C0088BC88 /* Frameworks */,
+				21FB86662872F83C0088BC88 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shortest-subarray-with-sum-at-least-k";
+			productName = "shortest-subarray-with-sum-at-least-k";
+			productReference = 21FB86682872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */;
+			productType = "com.apple.product-type.tool";
+		};
 		C8078230286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8078237286CA41600978E82 /* Build configuration list for PBXNativeTarget "basic-calculator-ii" */;
@@ -1256,6 +1394,15 @@
 					21835E74286DCAD500EF81DD = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					21FB862F287294160088BC88 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21FB863A2872BF780088BC88 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21FB86672872F83C0088BC88 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					C8078230286CA41600978E82 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -1311,6 +1458,9 @@
 				213E98C7286E93DA00FEF560 /* number-of-recent-calls */,
 				213E98D2286EC4DA00FEF560 /* task-scheduler */,
 				213E98DD286EF79400FEF560 /* design-circular-deque */,
+				21FB862F287294160088BC88 /* design-circular-queue */,
+				21FB863A2872BF780088BC88 /* max-sum-of-rectangle-no-larger-than-k */,
+				21FB86672872F83C0088BC88 /* shortest-subarray-with-sum-at-least-k */,
 			);
 		};
 /* End PBXProject section */
@@ -1473,6 +1623,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				21835E78286DCAD500EF81DD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB862C287294160088BC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FB8633287294160088BC88 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB86372872BF780088BC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FB863E2872BF780088BC88 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB86642872F83C0088BC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FB866B2872F83C0088BC88 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1919,6 +2093,66 @@
 			};
 			name = Release;
 		};
+		21FB8634287294160088BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21FB8635287294160088BC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21FB86402872BF780088BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21FB86412872BF780088BC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21FB866D2872F83C0088BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21FB866E2872F83C0088BC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C8078235286CA41600978E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2303,6 +2537,33 @@
 			buildConfigurations = (
 				21835E7A286DCAD500EF81DD /* Debug */,
 				21835E7B286DCAD500EF81DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21FB8636287294160088BC88 /* Build configuration list for PBXNativeTarget "design-circular-queue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21FB8634287294160088BC88 /* Debug */,
+				21FB8635287294160088BC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21FB863F2872BF780088BC88 /* Build configuration list for PBXNativeTarget "max-sum-of-rectangle-no-larger-than-k" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21FB86402872BF780088BC88 /* Debug */,
+				21FB86412872BF780088BC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21FB866C2872F83C0088BC88 /* Build configuration list for PBXNativeTarget "shortest-subarray-with-sum-at-least-k" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21FB866D2872F83C0088BC88 /* Debug */,
+				21FB866E2872F83C0088BC88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
