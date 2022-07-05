@@ -42,6 +42,7 @@ public class ListNode {
     public var val: Int
     public init(_ val: Int) {
         self.val = val
+        self.next = nil
     }
     
     public var next: ListNode?
@@ -49,38 +50,82 @@ public class ListNode {
 }
 
 class MyLinkedList {
-
+    // 这里定义的头结点 是一个虚拟头结点，而不是真正的链表头结点
+    private var dummyHead: ListNode<Int>?
+    private var size: Int
+    
     init() {
-
+        dummyHead = ListNode(0)
+        size = 0
     }
     
     func get(_ index: Int) -> Int {
-        
+        if index >= size || index < 0 {
+            return -1
+        }
+        var curNode = dummyHead?.next
+        var curIndex = index
+        while curIndex > 0 {
+            curNode = curNode?.next
+            curNode -= 1
+        }
+        return curNode?.val ?? -1
     }
     
     func addAtHead(_ val: Int) {
-
+        let node = ListNode(val)
+        node.next = dummyHead?.next
+        dummyHead?.next = node
+        size += 1
     }
     
     func addAtTail(_ val: Int) {
-
+        let node = ListNode(val)
+        var current = dummyHead
+        while current?.next != nil {
+            current = current?.next
+        }
+        current?.next = node
+        size += 1
     }
     
     func addAtIndex(_ index: Int, _ val: Int) {
-
+        if index > size {
+            return
+        }
+        let node = ListNode(val)
+        var curNode = dummyHead
+        var curIndex = index
+        
+        while curIndex > 0 {
+            curNode = curNode?.next
+            curIndex -= 1
+        }
+        
+        node.next = curNode?.next
+        curNode?.next = node
+        size += 1
     }
     
     func deleteAtIndex(_ index: Int) {
-
+        if index > size || index < 0 {
+            return
+        }
+        var current = dummyHead
+        for i in 0..<index {
+            current = current?.next
+        }
+        current?.next = current?.next?.next
+        size -= 1
     }
 }
 
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * let obj = MyLinkedList()
- * let ret_1: Int = obj.get(index)
- * obj.addAtHead(val)
- * obj.addAtTail(val)
- * obj.addAtIndex(index, val)
- * obj.deleteAtIndex(index)
- */
+// Your MyLinkedList object will be instantiated and called as such:
+let obj = MyLinkedList()
+let ret_1: Int = obj.get(index)
+obj.addAtHead(val)
+obj.addAtTail(val)
+obj.addAtIndex(index, val)
+obj.deleteAtIndex(index)
+ 
+
