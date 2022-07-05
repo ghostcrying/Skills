@@ -56,6 +56,9 @@ class Solution {
         var preSum = [Int](repeating: 0, count: n + 1)
         preSum[0] = 0
         for i in 0..<n {
+            if nums[i] >= k {
+                return 1
+            }
             preSum[i + 1] = preSum[i] + nums[i]
         }
         var front = 0, rear = 0
@@ -79,4 +82,25 @@ class Solution {
         return result > n ? -1 : result
     }
 
+    
+    class ListNode {
+        var val: Int
+        var next: ListNode?
+        init(_ val: Int) {
+            self.val = val
+            self.next = nil
+        }
+    }
+    // 1 -> 2 -> 3
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var p: ListNode? = nil
+        var c = head
+        while c != nil {
+            let next = c?.next
+            c?.next = p // 重新指向
+            p = c // 存储当前
+            c = next // 存储下一个
+        }
+        return p
+    }
 }
