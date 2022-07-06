@@ -136,7 +136,29 @@ class BSTIterator2 {
         return !stack.isEmpty
     }
 }
-
+/// 二叉搜索树第k小的元素
+class Solution {
+    // 需要优化, 不能直接就存储数组
+    // 使用压栈形式
+    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+        var node = root
+        var stack = [TreeNode]()
+        var n = k
+        while node != nil || !stack.isEmpty {
+            while node != nil {
+                stack.append(node!)
+                node = node?.left
+            }
+            node = stack.popLast()
+            n -= 1
+            if n == 0 {
+                break
+            }
+            node = node?.right
+        }
+        return node?.val ?? -1
+    }
+}
 
 /**
  * Your BSTIterator object will be instantiated and called as such:
