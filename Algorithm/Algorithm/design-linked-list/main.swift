@@ -51,7 +51,7 @@ public class ListNode {
 
 class MyLinkedList {
     // 这里定义的头结点 是一个虚拟头结点，而不是真正的链表头结点
-    private var dummyHead: ListNode<Int>?
+    private var dummyHead: ListNode?
     private var size: Int
     
     init() {
@@ -67,7 +67,7 @@ class MyLinkedList {
         var curIndex = index
         while curIndex > 0 {
             curNode = curNode?.next
-            curNode -= 1
+            curIndex -= 1
         }
         return curNode?.val ?? -1
     }
@@ -112,7 +112,7 @@ class MyLinkedList {
             return
         }
         var current = dummyHead
-        for i in 0..<index {
+        for _ in 0..<index {
             current = current?.next
         }
         current?.next = current?.next?.next
@@ -122,10 +122,10 @@ class MyLinkedList {
 
 // Your MyLinkedList object will be instantiated and called as such:
 let obj = MyLinkedList()
-let ret_1: Int = obj.get(index)
-obj.addAtHead(val)
-obj.addAtTail(val)
-obj.addAtIndex(index, val)
-obj.deleteAtIndex(index)
+let ret_1: Int = obj.get(0)
+obj.addAtHead(1)
+obj.addAtTail(2)
+obj.addAtIndex(1, 3)
+obj.deleteAtIndex(2)
  
 

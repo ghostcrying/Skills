@@ -63,15 +63,18 @@ class Solution {
     func threeSum_2(_ nums: [Int]) -> [[Int]] {
         let n = nums.count
         if n < 3 { return [] }
+        // 排序
         let lists = nums.sorted(by: <)
         var results = [[Int]]()
         for i in 0..<n-2 {
+            // 上一元素与当前一致就跳过
             if i > 0 && lists[i-1] == lists[i] {
                 continue
             }
             var k = n - 1
             let target = -lists[i]
             for j in i+1..<n-1 {
+                // 上一元素与当前一致就跳过
                 if j > i+1 && lists[j-1] == lists[j] {
                     continue
                 }

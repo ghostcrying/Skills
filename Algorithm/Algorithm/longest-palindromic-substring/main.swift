@@ -51,6 +51,7 @@ class Solution {
             }
             // 左右双向移位
             while l >= 0 && r < count && a[r] == a[l] {
+                // 此处l多走了一次, 所以需要最终l + 1, 得到真正的下标
                 l -= 1
                 r += 1
                 len += 2
@@ -89,6 +90,6 @@ class Solution {
     }
 }
 
-print(Solution().longestPalindrome_2("snckookcdd"))
+print(Solution().longestPalindrome_1("snckookcdd"))
 
 
