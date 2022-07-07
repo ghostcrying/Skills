@@ -52,6 +52,20 @@ public class TreeNode {
     }
 }
 
+extension TreeNode: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        // 用于唯一标识
+        hasher.combine(val)
+        hasher.combine(ObjectIdentifier(self))
+    }
+    
+    public static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
+        return lhs.left == rhs.left && lhs.right == rhs.right && lhs.val == rhs.val
+    }
+    
+}
+
 class Solution {
     
     func largestValues(_ root: TreeNode?) -> [Int] {

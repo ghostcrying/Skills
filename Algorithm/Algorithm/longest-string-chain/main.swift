@@ -6,6 +6,8 @@
 //
 /**
  ** leetCode: 1048.最长字符串链
+ *https://leetcode.cn/problems/longest-string-chain/
+ *
  给出一个单词数组 words ，其中每个单词都由小写英文字母组成。
 
  如果我们可以 不改变其他字符的顺序 ，在 wordA 的任何地方添加 恰好一个 字母使其变成 wordB ，那么我们认为 wordA 是 wordB 的 前身 。
@@ -82,4 +84,4 @@ class Solution {
 }
 
 
-print(Solution().longestStrChain(["xbc", "pcxbcf", "xb", "cxbc", "pcxbc"]))
+print(Solution().longestStrChain(["xbc", "pcxbcf", "xb", "cxbc", "pcxbc", "xb"]))

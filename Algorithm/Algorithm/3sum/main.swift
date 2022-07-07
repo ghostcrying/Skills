@@ -92,10 +92,39 @@ class Solution {
         }
         return results
     }
+    
+    // 正整数数组: a = b + 2*c
+    func testSum(_ nums: [Int]) -> [[Int]] {
+        let n = nums.count
+        if n < 3 { return [] }
+        let lists = nums.sorted(by: >)
+        var results = [[Int]]()
+        for i in 0..<n-2 {
+            // 相同直接跳过
+            if i > 0 && lists[i - 1] == lists[i] { continue }
+            var k = n - 1
+            let target = lists[i]
+            for j in i+1..<n-1 {
+                if j > i+1 && lists[j - 1] == lists[j] { continue }
+                while j < k && (2 * lists[k] + lists[j] < target) {
+                    k -= 1
+                }
+                if j == k {
+                    break
+                }
+                if 2 * lists[k] + lists[j] == target {
+                    results.append([lists[i], lists[j], lists[k]])
+                }
+            }
+        }
+        return results
+    }
 }
 
 
 // print(Solution().threeSum([-1, 0, 1, 2, -1, -4]))
 // print(Solution().threeSum([0, 0, 0]))
-print(Solution().threeSum_2([2, 0, -2, -5, -5, -3, 2, -4])) // -5, -5, -4, -3, -2, 0, 2, 2
+// print(Solution().threeSum_2([2, 0, -2, -5, -5, -3, 2, -4])) // -5, -5, -4, -3, -2, 0, 2, 2
 
+let lists_1 = [3, 1, 1, 2, 0, 3, 4]
+print(Solution().testSum(lists_1))

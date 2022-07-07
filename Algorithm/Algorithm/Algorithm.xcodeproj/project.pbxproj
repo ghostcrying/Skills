@@ -47,6 +47,8 @@
 		21FB8710287542E10088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB870F287542E10088BC88 /* main.swift */; };
 		21FB871B28755B8B0088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB871A28755B8B0088BC88 /* main.swift */; };
 		21FB8726287574FE0088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB8725287574FE0088BC88 /* main.swift */; };
+		21FB8735287691C20088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB8734287691C20088BC88 /* main.swift */; };
+		21FB874028769CBC0088BC88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB873F28769CBC0088BC88 /* main.swift */; };
 		C8078234286CA41600978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8078233286CA41600978E82 /* main.swift */; };
 		C807823F286CA68400978E82 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C807823E286CA68400978E82 /* main.swift */; };
 		C85B965828746C4700346E36 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85B965728746C4700346E36 /* main.swift */; };
@@ -422,6 +424,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		21FB8730287691C20088BC88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		21FB873B28769CBC0088BC88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		C807822F286CA41600978E82 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -613,6 +633,10 @@
 		21FB871A28755B8B0088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		21FB8723287574FE0088BC88 /* find-largest-value-in-each-tree-row */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "find-largest-value-in-each-tree-row"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FB8725287574FE0088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21FB8732287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "lowest-common-ancestor-of-a-binary-tree"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FB8734287691C20088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		21FB873D28769CBC0088BC88 /* sum-of-distances-in-tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "sum-of-distances-in-tree"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FB873F28769CBC0088BC88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C8078231286CA41600978E82 /* basic-calculator-ii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "basic-calculator-ii"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8078233286CA41600978E82 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C807823C286CA68400978E82 /* longest-string-chain */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "longest-string-chain"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -914,6 +938,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		21FB8720287574FE0088BC88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB872F287691C20088BC88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB873A28769CBC0088BC88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1327,6 +1365,22 @@
 			path = "find-largest-value-in-each-tree-row";
 			sourceTree = "<group>";
 		};
+		21FB8733287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */ = {
+			isa = PBXGroup;
+			children = (
+				21FB8734287691C20088BC88 /* main.swift */,
+			);
+			path = "lowest-common-ancestor-of-a-binary-tree";
+			sourceTree = "<group>";
+		};
+		21FB873E28769CBC0088BC88 /* sum-of-distances-in-tree */ = {
+			isa = PBXGroup;
+			children = (
+				21FB873F28769CBC0088BC88 /* main.swift */,
+			);
+			path = "sum-of-distances-in-tree";
+			sourceTree = "<group>";
+		};
 		C8078232286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXGroup;
 			children = (
@@ -1454,6 +1508,8 @@
 				21FB8724287574FE0088BC88 /* find-largest-value-in-each-tree-row */,
 				C85B968D2875B7B700346E36 /* validate-binary-search-tree */,
 				C85B96982875D8B900346E36 /* binary-search-tree-iterator */,
+				21FB8733287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
+				21FB873E28769CBC0088BC88 /* sum-of-distances-in-tree */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1513,6 +1569,8 @@
 				21FB8723287574FE0088BC88 /* find-largest-value-in-each-tree-row */,
 				C85B968C2875B7B700346E36 /* validate-binary-search-tree */,
 				C85B96972875D8B800346E36 /* binary-search-tree-iterator */,
+				21FB8732287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
+				21FB873D28769CBC0088BC88 /* sum-of-distances-in-tree */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2224,6 +2282,40 @@
 			productReference = 21FB8723287574FE0088BC88 /* find-largest-value-in-each-tree-row */;
 			productType = "com.apple.product-type.tool";
 		};
+		21FB8731287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FB8738287691C20088BC88 /* Build configuration list for PBXNativeTarget "lowest-common-ancestor-of-a-binary-tree" */;
+			buildPhases = (
+				21FB872E287691C20088BC88 /* Sources */,
+				21FB872F287691C20088BC88 /* Frameworks */,
+				21FB8730287691C20088BC88 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lowest-common-ancestor-of-a-binary-tree";
+			productName = "lowest-common-ancestor-of-a-binary-tree";
+			productReference = 21FB8732287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */;
+			productType = "com.apple.product-type.tool";
+		};
+		21FB873C28769CBC0088BC88 /* sum-of-distances-in-tree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FB874128769CBC0088BC88 /* Build configuration list for PBXNativeTarget "sum-of-distances-in-tree" */;
+			buildPhases = (
+				21FB873928769CBC0088BC88 /* Sources */,
+				21FB873A28769CBC0088BC88 /* Frameworks */,
+				21FB873B28769CBC0088BC88 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sum-of-distances-in-tree";
+			productName = "sum-of-distances-in-tree";
+			productReference = 21FB873D28769CBC0088BC88 /* sum-of-distances-in-tree */;
+			productType = "com.apple.product-type.tool";
+		};
 		C8078230286CA41600978E82 /* basic-calculator-ii */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8078237286CA41600978E82 /* Build configuration list for PBXNativeTarget "basic-calculator-ii" */;
@@ -2435,7 +2527,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					213E98BC286E91E800FEF560 = {
@@ -2558,6 +2650,12 @@
 					21FB8722287574FE0088BC88 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					21FB8731287691C20088BC88 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					21FB873C28769CBC0088BC88 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					C8078230286CA41600978E82 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -2661,6 +2759,8 @@
 				21FB8722287574FE0088BC88 /* find-largest-value-in-each-tree-row */,
 				C85B968B2875B7B700346E36 /* validate-binary-search-tree */,
 				C85B96962875D8B800346E36 /* binary-search-tree-iterator */,
+				21FB8731287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
+				21FB873C28769CBC0088BC88 /* sum-of-distances-in-tree */,
 			);
 		};
 /* End PBXProject section */
@@ -2983,6 +3083,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				21FB8726287574FE0088BC88 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB872E287691C20088BC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FB8735287691C20088BC88 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FB873928769CBC0088BC88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FB874028769CBC0088BC88 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3885,6 +4001,46 @@
 			};
 			name = Release;
 		};
+		21FB8736287691C20088BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21FB8737287691C20088BC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		21FB874228769CBC0088BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21FB874328769CBC0088BC88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C8078235286CA41600978E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4575,6 +4731,24 @@
 			buildConfigurations = (
 				21FB8728287574FE0088BC88 /* Debug */,
 				21FB8729287574FE0088BC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21FB8738287691C20088BC88 /* Build configuration list for PBXNativeTarget "lowest-common-ancestor-of-a-binary-tree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21FB8736287691C20088BC88 /* Debug */,
+				21FB8737287691C20088BC88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21FB874128769CBC0088BC88 /* Build configuration list for PBXNativeTarget "sum-of-distances-in-tree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21FB874228769CBC0088BC88 /* Debug */,
+				21FB874328769CBC0088BC88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
