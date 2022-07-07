@@ -103,6 +103,7 @@ class Solution {
                 }
             }
         }
+        // 排序: 最终从最小的节点开始走
         stack.sort(by: >)
         
         var res = 0
@@ -117,15 +118,18 @@ class Solution {
                     continue
                 }
                 let curheight = map[i][j]
+                // 格子有差值, 说明可以灌水
                 if minHeight > curheight {
                     // 灌水
                     res += minHeight - curheight
                     // 将邻居家灌满水
                     map[i][j] = minHeight
                 }
+                // 该节点加入队列
                 stack.append(Node(i: i, j: j, height: map[i][j]))
+                // 排序
                 stack.sort(by: >)
-                // 标记
+                // 标记已处理过
                 visit[i][j] = true
             }
         }

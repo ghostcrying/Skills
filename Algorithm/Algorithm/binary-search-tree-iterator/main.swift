@@ -16,7 +16,6 @@
 
  你可以假设 next() 调用总是有效的，也就是说，当调用 next() 时，BST 的中序遍历中至少存在一个下一个数字。
 
-  
 
  示例：
  https://assets.leetcode.com/uploads/2018/12/25/bst-tree.png
