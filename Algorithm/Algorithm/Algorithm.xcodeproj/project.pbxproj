@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21151B6028780BFA003E90A4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21151B5F28780BFA003E90A4 /* main.swift */; };
 		213E98C0286E91E800FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98BF286E91E800FEF560 /* main.swift */; };
 		213E98CB286E93DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98CA286E93DA00FEF560 /* main.swift */; };
 		213E98D6286EC4DA00FEF560 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E98D5286EC4DA00FEF560 /* main.swift */; };
@@ -65,6 +66,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		21151B5B28780BFA003E90A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		213E98BB286E91E800FEF560 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -563,6 +573,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21151B5D28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "dao-yu-shu-liang-by-leetcode"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21151B5F28780BFA003E90A4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		213E98BD286E91E800FEF560 /* implement-stack-using-queues */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "implement-stack-using-queues"; sourceTree = BUILT_PRODUCTS_DIR; };
 		213E98BF286E91E800FEF560 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		213E98C8286E93DA00FEF560 /* number-of-recent-calls */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "number-of-recent-calls"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -676,6 +688,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		21151B5A28780BFA003E90A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		213E98BA286E91E800FEF560 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1064,6 +1083,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21151B5E28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */ = {
+			isa = PBXGroup;
+			children = (
+				21151B5F28780BFA003E90A4 /* main.swift */,
+			);
+			path = "dao-yu-shu-liang-by-leetcode";
+			sourceTree = "<group>";
+		};
 		213E98BE286E91E800FEF560 /* implement-stack-using-queues */ = {
 			isa = PBXGroup;
 			children = (
@@ -1538,6 +1565,7 @@
 				21FB8733287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
 				21FB873E28769CBC0088BC88 /* sum-of-distances-in-tree */,
 				C80495D5287716150079E931 /* sliding-window-maximum */,
+				21151B5E28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */,
 				C8C4377D286B49A1003177CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1600,6 +1628,7 @@
 				21FB8732287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
 				21FB873D28769CBC0088BC88 /* sum-of-distances-in-tree */,
 				C80495D4287716150079E931 /* sliding-window-maximum */,
+				21151B5D28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1631,6 +1660,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		21151B5C28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21151B6328780BFA003E90A4 /* Build configuration list for PBXNativeTarget "dao-yu-shu-liang-by-leetcode" */;
+			buildPhases = (
+				21151B5928780BFA003E90A4 /* Sources */,
+				21151B5A28780BFA003E90A4 /* Frameworks */,
+				21151B5B28780BFA003E90A4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dao-yu-shu-liang-by-leetcode";
+			productName = "dao-yu-shu-liang-by-leetcode";
+			productReference = 21151B5D28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */;
+			productType = "com.apple.product-type.tool";
+		};
 		213E98BC286E91E800FEF560 /* implement-stack-using-queues */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 213E98C3286E91E800FEF560 /* Build configuration list for PBXNativeTarget "implement-stack-using-queues" */;
@@ -2573,9 +2619,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					21151B5C28780BFA003E90A4 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					213E98BC286E91E800FEF560 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -2811,11 +2860,20 @@
 				21FB8731287691C20088BC88 /* lowest-common-ancestor-of-a-binary-tree */,
 				21FB873C28769CBC0088BC88 /* sum-of-distances-in-tree */,
 				C80495D3287716150079E931 /* sliding-window-maximum */,
+				21151B5C28780BFA003E90A4 /* dao-yu-shu-liang-by-leetcode */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		21151B5928780BFA003E90A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21151B6028780BFA003E90A4 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		213E98B9286E91E800FEF560 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3259,6 +3317,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		21151B6128780BFA003E90A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		21151B6228780BFA003E90A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		213E98C1286E91E800FEF560 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4451,6 +4529,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		21151B6328780BFA003E90A4 /* Build configuration list for PBXNativeTarget "dao-yu-shu-liang-by-leetcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21151B6128780BFA003E90A4 /* Debug */,
+				21151B6228780BFA003E90A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		213E98C3286E91E800FEF560 /* Build configuration list for PBXNativeTarget "implement-stack-using-queues" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

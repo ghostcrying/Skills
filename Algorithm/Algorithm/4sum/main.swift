@@ -97,5 +97,83 @@ class Solution {
     }
 }
 
-
 print(Solution().fourSum([1,0,-1,0,-2,2], 0))
+
+/*:
+ ***LeetCode: 279. 完全平方数
+ https://leetcode.cn/problems/perfect-squares/
+ 
+ 给你一个整数 n ，返回 和为 n 的完全平方数的最少数量 。
+ 完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
+
+ 示例 1：
+ 输入：n = 12
+ 输出：3
+ 解释：12 = 4 + 4 + 4
+ 
+ 示例 2：
+ 输入：n = 13
+ 输出：2
+ 解释：13 = 4 + 9
+  
+ 提示：
+ 1 <= n <= 104
+ */
+/// 1. 四平方和定理证明了任意一个正整数都可以被表示为至多四个正整数的平方和
+/// - n == 4^k*(8m+7): n只能被表示为四个正整数的平方和
+/// - n !=  4^k*(8m+7):  返回结果是[1, 2, 3]中的一种
+///   - 为1时: 完全平方数
+///   - 为2时: a^2 + b^2
+///   - 为3时: 不用处理, 判断是否是1/2即可
+extension Solution {
+    // 10 = 3^2 + 1^2
+    // 进行递推公式得到: methos[i] = methoh
+    func numSquares(_ n: Int) -> Int {
+        var methods = [Int](repeating: 0, count: n + 1)
+        for i in 1...n {
+            var minn = Int.max
+            var j = 1
+            while j * j <= i {
+                minn = min(minn, methods[i-j*j] + 1)
+                j += 1
+            }
+            methods[i] = minn
+        }
+        return methods[n]
+    }
+    
+    // 完全平方数判定
+    private func isPerfectSquare(_ num: Int) -> Bool {
+        let s = Int(sqrt(Double(num)))
+        return s * s == num
+    }
+    
+    // 判断是否能表示为 4^k*(8m+7)
+    private func checkAnswer4(_ num: Int) -> Bool {
+        var n = num
+        while n % 4 == 0 {
+            n /= 4
+        }
+        return n % 8 == 7
+    }
+
+    ///
+    func numSquares_1(_ n: Int) -> Int {
+        if isPerfectSquare(n) {
+            return 1
+        }
+        if checkAnswer4(n) {
+            return 4
+        }
+        var i = 1
+        while i*i <= n {
+            let j = n - i * i
+            if isPerfectSquare(j) {
+                return 2
+            }
+            i += 1
+        }
+        return 3
+    }
+    
+}

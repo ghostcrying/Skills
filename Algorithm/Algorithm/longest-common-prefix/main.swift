@@ -26,7 +26,7 @@
 import Foundation
 
 class Solution {
-    
+    // 暴力法: 直接排序从第一个字符串开始进行遍历
     func longestCommonPrefix_1(_ strs: [String]) -> String {
         if strs.count < 2 {
             return strs.joined()
@@ -79,7 +79,74 @@ class Solution {
     }
 }
 
+extension Solution {
+    // 所有数据都是小写英文字母
+    func ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int {
+        var wordSet = Set(wordList)
+        var quene = [(String, Int)]()
+        quene.append((beginWord, 1)) // 开始单词和层级加入队列
+        while !quene.isEmpty {
+            // 出队 进行bfs
+            let (word, level) = quene.removeFirst()
+            // 和endword相等返回层级
+            if word == endWord {
+                return level
+            }
+            // 循环单词列表
+            for i in 0..<word.count {
+                // 循环26个小写字母
+                for c in 97...122 {
+                    // 得到新的单词
+                    let w = word.replaceIndex(i, with: Character(UnicodeScalar(c)!))
+                    if w == word { continue }
+                    // 检查wordset包不包括新生成的单词 避重复入列
+                    if wordSet.contains(w) {
+                        // 新单词加入队列
+                        quene.append((w, level + 1))
+                        // 避死循环
+                        wordSet.remove(w)
+                    }
+                }
+            }
+        }
+        // 始终没有遇到终点
+        return 0
+    }
+}
 
 
-// print("Hello, World!")
+print("Hello, World!".prefix(1))
+print("sss".replaceIndex(1, with: "+"))
+
+extension String {
+    func replaceIndex(_ index: Int, with value: Character) -> String {
+        guard index < self.count else { return "" }
+        var s = self
+        let index = s.index(s.startIndex, offsetBy: index)
+        s.replaceSubrange(index...index, with: String(value))
+        return s
+    }
+}
+
+extension String {
+
+    // 截取规定下标之后的字符串
+    func subStringFrom(index: Int) -> String {
+        let temporaryString: String = self
+        let temporaryIndex = temporaryString.index(temporaryString.startIndex, offsetBy: 3)
+        return String(temporaryString[temporaryIndex...])
+    }
+
+    // 截取规定下标之前的字符串
+    func subStringTo(index: Int) -> String {
+        let temporaryString = self
+        let temporaryIndex = temporaryString.index(temporaryString.startIndex, offsetBy: index)
+        return String(temporaryString[..<temporaryIndex])
+    }
+
+}
+print("sss".subStringTo(index: 3))
+print("sss++".subStringFrom(index: 3))
+
+print(Solution().ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog","hig"]))
 
