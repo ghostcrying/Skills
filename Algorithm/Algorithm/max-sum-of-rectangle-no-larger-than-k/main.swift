@@ -44,8 +44,8 @@ class Solution {
         for i in 0..<m { // m上边界
             var sum = [Int](repeating: 0, count: n)
             for j in i..<m { // m下边界
-                for k in 0..<n {
-                    sum[k] += matrix[j][k] // 在行上下边界中每列数据
+                for l in 0..<n {
+                    sum[l] += matrix[j][l] // 在行上下边界中每列数据
                 }
                 result = max(searchMax(sum, k), result)
             }

@@ -51,18 +51,10 @@ class Solution {
         var result = 0 // 存储最大下标差值
         for i in b {
             result = max(result, i - m) // i - m就是差值
-            m = min(m, i)
+            m = min(m, i) // 1 1 1 0
         }
         return result
     }
-    
-    /*
-     int ans = 0;
-     int m = N;
-     for (int i: B) {
-         ans = Math.max(ans, i - m);
-         m = Math.min(m, i);
-     }
-     */
+
 }
 

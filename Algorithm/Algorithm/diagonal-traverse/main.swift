@@ -47,8 +47,8 @@ class Solution {
                 }
             } else {
                 // 奇数
-                var x = min(n - 1, i)
-                var y = i - x
+                var y = min(n - 1, i)
+                var x = i - y
                 while x < m && y >= 0 {
                     results.append(mat[x][y])
                     x += 1
