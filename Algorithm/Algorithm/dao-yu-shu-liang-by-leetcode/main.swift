@@ -45,6 +45,7 @@ class Solution {
     /// 逐个遍历
     func numIslands(_ grid: [[Character]]) -> Int {
         var grid = grid
+        let paths = [(0, -1), (0, 1), (1, 0), (-1, 0)]
         let m = grid.count
         let n = grid[0].count
         var iland = 0
@@ -52,37 +53,36 @@ class Solution {
             for j in 0..<n {
                 if grid[i][j] == "1" {
                     iland += 1
-                    combinelane(&grid, i: i, j: j)
+                    combinelane(&grid, i: i, j: j, paths: paths)
                 }
             }
         }
         return iland
     }
     
-    private func combinelane(_ grid: inout [[Character]], i: Int, j: Int) {
+    private func combinelane(_ grid: inout [[Character]], i: Int, j: Int, paths: [(Int, Int)]) {
         if i < 0 || i >= grid.count || j < 0 || j >= grid[0].count || grid[i][j] == "0" {
             return
         }
+        // 修改当前节点位0，继续向附近遍历
         grid[i][j] = "0"
-        combinelane(&grid, i: i - 1, j: j)
-        combinelane(&grid, i: i + 1, j: j)
-        combinelane(&grid, i: i, j: j + 1)
-        combinelane(&grid, i: i, j: j - 1)
+        paths.forEach {
+            combinelane(&grid, i: i + $0.0 , j: j + $0.1, paths: paths)
+        }
     }
 }
 
 let lists: [[Character]] = [["1","1","1","1","0"],
-             ["1","1","0","1","0"],
-             ["1","1","0","0","0"],
-             ["0","0","0","0","0"]]
+                            ["1","1","0","1","0"],
+                            ["1","1","0","0","0"],
+                            ["0","0","0","0","0"]]
 
-let lists2: [[Character]] = [
-    ["1","1","0","0","0"],
-    ["1","1","0","0","0"],
-    ["0","0","1","0","0"],
-    ["0","0","0","1","1"]]
-
-print(Solution().numIslands(lists2))
+let lists2: [[Character]] = [["1","1","0","0","0"],
+                             ["1","1","0","0","0"],
+                             ["0","0","1","0","0"],
+                             ["0","0","0","1","1"]]
+print("岛屿数量: \(Solution().numIslands(lists))")
+print("岛屿数量: \(Solution().numIslands(lists2))")
 
 /// LeetCode:  207. 课程表I
 /// https://leetcode.cn/problems/course-schedule/
@@ -97,7 +97,7 @@ extension Solution {
     // 课程1依赖课程0修完才可以修,0依赖2才可以修
     func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
         let n = prerequisites.count
-        // 入度数组
+        // 入度数组: 每个课程对应的被依赖
         var degree = [Int](repeating: 0, count: numCourses)
         // 邻接表
         var map = [Int: [Int]]()

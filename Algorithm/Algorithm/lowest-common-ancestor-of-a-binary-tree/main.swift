@@ -122,4 +122,23 @@ class Solution {
         // 左右节点都不为nil, 返回当前节点
         return root
     }
+    
+    
+    func lowestCommonAncestor_1(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        if root == nil || root == q || root == p {
+            return root
+        }
+        let l = lowestCommonAncestor_1(root?.left, p, q)
+        let r = lowestCommonAncestor_1(root?.right, p, q)
+        if l == nil && r == nil {
+            return nil
+        }
+        if l == nil {
+            return r
+        }
+        if r == nil {
+            return l
+        }
+        return root
+    }
 }

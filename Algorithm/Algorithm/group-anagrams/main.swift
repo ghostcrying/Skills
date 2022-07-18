@@ -62,6 +62,7 @@ class Solution {
         return results
     }
     
+    // 直接遍历数组, 对字符串进行排序hash, 作为hash的key, 判定并存入key对应的value数组
     func groupAnagrams_2(_ strs: [String]) -> [[String]] {
         var map = [String: [String]]()
         for str in strs {

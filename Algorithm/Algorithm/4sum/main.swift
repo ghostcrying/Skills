@@ -75,10 +75,12 @@ class Solution {
                     if s == target2 {
                         // 符合条件
                         results.append([lists[i], lists[j], lists[l], lists[r]])
+                        // 左侧相同则忽略
                         while l < r && lists[l] == lists[l + 1] {
                             l += 1
                         }
                         l += 1
+                        // 相同则忽略
                         while l < r && lists[r] == lists[r - 1] {
                             r -= 1
                         }
@@ -177,3 +179,6 @@ extension Solution {
     }
     
 }
+
+// 60 = 49 + 9 + 1 + 1
+// 60 / 4 = 15

@@ -14,8 +14,8 @@
 
   
  示例 1：
- 输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
- 输出：[3,3,5,5,6,7]
+ 输入：nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3
+ 输出：[3, 3, 5, 5, 6, 7]
  解释：
  滑动窗口的位置                最大值
  ---------------               -----
@@ -35,10 +35,6 @@
  1 <= nums.length <= 105
  -104 <= nums[i] <= 104
  1 <= k <= nums.length
-
- 来源：力扣（LeetCode）
- 链接：https://leetcode.cn/problems/sliding-window-maximum
- 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  
  */
 
@@ -49,7 +45,7 @@ class Solution {
     func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
         let n = nums.count
         var ans = [Int](repeating: 0, count: n - k + 1)
-        var stack = [Int]()
+        var stack = [Int]() // 维护一个递减队列
         var l = 0
         for r in 0..<n {
             let len = r - l + 1
@@ -165,8 +161,7 @@ extension Solution {
         var heap = [1]
         var ugly = 1
         for _ in 1...n {
-            let current = heap.first!
-            heap.removeFirst()
+            let current = heap.removeFirst()
             ugly = current
             for f in factors {
                 let next = current * f
@@ -203,4 +198,4 @@ extension Solution {
     }
 }
 
-print(Solution().nthUglyNumber_1(10))
+print(Solution().nthUglyNumber(10))
