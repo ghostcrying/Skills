@@ -77,7 +77,7 @@ class Solution {
                 let curIndex = stack.popLast()!
                 let height = heights[curIndex]
                 let width = index - stack.last! - 1
-                maxArea = max(maxArea,height*width)
+                maxArea = max(maxArea, height * width)
             }
             stack.append(index)
         }

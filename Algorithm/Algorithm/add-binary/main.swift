@@ -73,6 +73,7 @@ class Solution {
         return result
     }
     
+    // 逆序遍历, 存储临时值
     func addBinary_3(_ a: String, _ b: String) -> String {
         let arr_a = Array(a)
         let arr_b = Array(b)

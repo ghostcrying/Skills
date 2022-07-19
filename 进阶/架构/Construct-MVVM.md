@@ -205,8 +205,8 @@ class Bind<T> {
             handle(self.value)
         }
     }
+    
 }
-
 
 class Person {
     

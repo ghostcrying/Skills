@@ -116,6 +116,45 @@ func shellSort(_ nums: [Int]) -> [Int] {
     return lists
 }
 
+// 归并排序
+// 合并两个有序数组
+private func merge(left: [Int], right: [Int]) -> [Int] {
+    var l = 0, r = 0
+    var result = [Int]()
+    while l < left.count && r < right.count {
+        if left[l] > right[r] {
+            result.append(right[r])
+            r += 1
+        } else if left[l] < right[r] {
+            result.append(left[l])
+            l += 1
+        } else {
+            result.append(left[l])
+            result.append(right[r])
+            l += 1
+            r += 1
+        }
+    }
+    while l < left.count {
+        result.append(left[l])
+        l += 1
+    }
+    while r < right.count {
+        result.append(right[r])
+        r += 1
+    }
+    return result
+}
+// 内部通过迭代形式无限切分到最终只有一个元素
+func mergeSort(_ nums: [Int]) -> [Int] {
+    // 合并两个数组
+    guard nums.count > 1 else { return nums }
+    let m = nums.count / 2
+    let l = mergeSort(Array(nums[0..<m]))
+    let r = mergeSort(Array(nums[m..<nums.count]))
+    return merge(left: l, right: r)
+}
+
 
 var lists = [6, 10, 5, 100, 5, 4, 3, 9, 20]
 print(insertBinSort(lists))
@@ -127,7 +166,7 @@ print(shellSort(lists))
 func Josephus(_ m: Int, out: Int) -> Int {
     var temp = 0
     for i in 1...m {
-        temp = (temp + out) % i // // f[i] = (f[i-1] + m) % i
+        temp = (temp + out) % i // f[i] = (f[i-1] + m) % i
     }
     return temp
 }

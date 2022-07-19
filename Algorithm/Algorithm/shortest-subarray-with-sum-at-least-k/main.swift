@@ -63,7 +63,7 @@ class Solution {
         }
         var front = 0, rear = 0
         var result = n + 1 // 比n大即可
-        // 保存数组元素的下标
+        // 保存数组元素的下标, 通过双指针模拟stack的操作
         var indexs = [Int](repeating: 0, count: n + 1)
         for i in 0..<n+1 {
             // 因为要维护一个递增队列，故如果最新的元素比队尾小，影响单调性，把队尾元素弹出
@@ -104,3 +104,5 @@ class Solution {
         return p
     }
 }
+
+print(Solution().shortestSubarray_2([2, -1, 2], 3))

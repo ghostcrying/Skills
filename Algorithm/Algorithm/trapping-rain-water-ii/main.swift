@@ -127,7 +127,7 @@ class Solution {
                 }
                 // 该节点加入队列
                 stack.append(Node(i: i, j: j, height: map[i][j]))
-                // 排序
+                // 排序, 插入排序
                 stack.sort(by: >)
                 // 标记已处理过
                 visit[i][j] = true

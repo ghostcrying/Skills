@@ -93,6 +93,7 @@ class Solution {
         return nil
     }
     // 公式推导
+    // 1 2 3 7 8 9 -> 7
     func detectCycle_2(_ head: ListNode?) -> ListNode? {
         var slow: ListNode? = head
         var fast: ListNode? = head

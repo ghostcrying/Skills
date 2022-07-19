@@ -34,7 +34,7 @@ class Solution {
     
     func nextGreaterElements(_ nums: [Int]) -> [Int] {
         let count = nums.count
-        var stack = [Int]() // 存储下标
+        var stack = [Int]() // 单调栈递减序列: 存储下标
         var result = [Int](repeating: -1, count: count)
         // 将数组翻一倍查找
         for i in 0..<2*count {

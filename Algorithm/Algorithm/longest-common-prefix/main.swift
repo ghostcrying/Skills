@@ -57,9 +57,9 @@ class Solution {
         if start >= ended {
             return strs[start]
         }
-        let mid = (start + ended) / 2
-        let left = findLongestCommonPrefix(strs, 0, mid - 1)
-        let right = findLongestCommonPrefix(strs, mid, ended)
+        let mid = (start + ended) / 2 + start
+        let left = findLongestCommonPrefix(strs, 0, mid)
+        let right = findLongestCommonPrefix(strs, mid + 1, ended)
         return commonPrefix(left, right)
     }
 
@@ -72,10 +72,10 @@ class Solution {
         let minCount = min(array_l.count, array_r.count)
         for i in 0..<minCount {
             if array_l[i] != array_r[i] {
-                return String(leftStr.prefix(i))
+                return leftStr.subStringTo(index: i)
             }
         }
-        return String(leftStr.prefix(minCount))
+        return leftStr.subStringTo(index: minCount)
     }
 }
 
@@ -150,3 +150,5 @@ print("sss++".subStringFrom(index: 3))
 
 print(Solution().ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog","hig"]))
 
+
+print(Solution().longestCommonPrefix_2(["flower", "flow", "flight"]))

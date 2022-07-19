@@ -41,6 +41,7 @@ import Foundation
 
 class Solution {
     // 从左到右每一根柱子: 将其固定为矩形的高度h, 随后我们从这跟柱子开始向两侧延伸，直到遇到高度小于h的柱子，就确定了矩形的左右边界
+    // 2,1,5,6,2,3
     func largestRectangleArea_1(_ heights: [Int]) -> Int {
         let n = heights.count
         var results = 0
@@ -70,7 +71,7 @@ class Solution {
             while !stack.isEmpty, newHeight[stack.last!] > value {
                 let last = stack.popLast()!
                 let space = newHeight[last] * (i - stack.last! - 1)
-                // print(space)
+                print(space)
                 result = max(result, space)
             }
             stack.append(i)
