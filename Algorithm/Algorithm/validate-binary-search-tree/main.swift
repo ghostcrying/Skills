@@ -118,7 +118,6 @@ class Solution {
             recursionPostorderTraversal(node)
             recursionPostorderTraversal(node)
             // print(node?.val) // 后序遍历在此处操作
-            
         }
     }
     

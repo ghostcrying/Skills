@@ -69,6 +69,9 @@ class Solution {
             return []
         }
         subtrees(root)
+        for n in treeList {
+            print(n?.val)
+        }
         return treeList
     }
     
@@ -77,8 +80,10 @@ class Solution {
         guard let root = root else {
             return "#"
         }
+        // 设计hashKey
         let result = subtrees(root.left) + "," + subtrees(root.right) + "," + "\(root.val)"
         let hashKey = result.hashValue
+        print(result)
         var times = treeMaps[hashKey] ?? 0
         times += 1
         if times == 2 {
@@ -88,4 +93,10 @@ class Solution {
         return result
     }
 }
+
+let node2_1 = TreeNode(2, TreeNode(4), nil)
+let node2_2 = TreeNode(2, TreeNode(4), nil)
+let node3_1 = TreeNode(3, node2_2, TreeNode(4))
+let root = TreeNode(1, node2_1, node3_1)
+print(Solution().findDuplicateSubtrees(root))
 

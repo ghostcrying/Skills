@@ -116,24 +116,40 @@ class Solution {
     
     /// 删除链表的倒数第n个节点, 并返回头结点
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        var m = 0
-        while head?.next != nil {
-            m += 1
+        guard head?.next != nil else { return nil }
+        var r = head
+        var l: ListNode? = ListNode(-1, head) // 虚节点
+        var index = 0
+        let h = l // 存储虚节点
+        while r != nil {
+            // 当r移动到n的位置时刻, 进行左指针移动
+            if index >= n {
+                l = l?.next
+            }
+            index += 1
+            r = r?.next
         }
-        // 越界, 返回第一个, 被限定范围了不用处理
-        // if n > m { return head }
-        // m = 3 n = 2
-        var space = m - n + 1
-        let dummy = ListNode(0, head) // 虚节点
-        var curr: ListNode? = dummy
-        while space > 0 {
-            space -= 1
-            curr = curr?.next
-        }
-        // 此时node就是被删除节点的前一节点
-        curr?.next = curr?.next?.next
-        // 返回虚节点的下一节点
-        return dummy.next
+        // l?.next就是需要删除的节点
+        let deleteNode = l?.next
+        l?.next = l?.next?.next
+        // 将要删除的节点的next置为nil
+        deleteNode?.next = nil
+        return h?.next
     }
 }
 
+/// 1 2 3 4 5
+/// 0 1 2 3 4
+
+let n5 = ListNode(5)
+let n4 = ListNode(4, n5)
+let n3 = ListNode(3, n4)
+let n2 = ListNode(2, n3)
+let n1 = ListNode(1, n2)
+
+let node_2 = Solution().removeNthFromEnd(n1, 2)
+var node_2_1 = node_2
+while node_2_1 != nil {
+    print(node_2_1?.val ?? 0)
+    node_2_1 = node_2_1?.next
+}

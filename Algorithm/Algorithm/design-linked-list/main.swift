@@ -108,7 +108,7 @@ class MyLinkedList {
     }
     
     func deleteAtIndex(_ index: Int) {
-        if index > size || index < 0 {
+        if index >= size || index < 0 {
             return
         }
         var current = dummyHead
@@ -119,6 +119,7 @@ class MyLinkedList {
         size -= 1
     }
 }
+// 0 1 2 3 4
 
 // Your MyLinkedList object will be instantiated and called as such:
 let obj = MyLinkedList()
