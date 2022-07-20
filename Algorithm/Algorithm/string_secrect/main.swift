@@ -40,9 +40,9 @@ func secrect(_ k: Int, _ str: String ) -> String {
     let regs = [reg1, reg2]
     regs.forEach {
         while let range = operate.firstMatch($0) {
-            operate
-                .replaceSubrange(operate.index(operate.startIndex, offsetBy: range.location)..<operate.index(operate.startIndex, offsetBy: range.location + range.length),
-                                 with: "+")
+            let start = operate.index(operate.startIndex, offsetBy: range.location)
+            let ended = operate.index(operate.startIndex, offsetBy: range.location + range.length)
+            operate.replaceSubrange(start..<ended, with: "+")
         }
     }
     guard operate.contains("+") else {
@@ -92,14 +92,36 @@ func testRegs() {
         print(reg.rangeOfFirstMatch(in: str1, range: NSRange(location: 0, length: str1.count)))
     }
 }
-
 // testRegs()
+
+func testRegs1() {
+    let reg1 = """
+    [1-9][[][a-z]+[]]
+    """
+    /// swift中的正则表达式对于特殊字符: []{}
+    let reg2 = "[1-9][\\[][a-z]+[\\]]"
+    var codes = "2[v]s2[f2[d]]"
+    while let range = codes.firstMatch(reg2) {
+        let start = codes.index(codes.startIndex, offsetBy: range.location)
+        let ended = codes.index(codes.startIndex, offsetBy: range.location + range.length)
+        let a = Array(String(codes[start..<ended])).map { String($0) }
+        let value = a[2..<(range.length - 3 + 2)].joined()
+        // 临时字符串
+        var tmp = ""
+        for _ in 0..<Int(a[0])! {
+            tmp += value
+        }
+        codes.replaceSubrange(start..<ended, with: tmp)
+    }
+    print(codes)
+}
+// testRegs1()
 
 let str1 = "saoaasda_ssa324223_timeout_100"
 let str2 = """
 2321_"sada43f3223"_timeout__100_""
 """
-
 print(secrect(10, str2))
+
 
 

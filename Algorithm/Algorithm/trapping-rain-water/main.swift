@@ -53,14 +53,17 @@ class Solution {
         let legth = height.count
         var max_l = [Int](repeating: 0, count: legth)
         var max_r = [Int](repeating: 0, count: legth)
+        /// 左侧最大高度
         max_l[0] = height[0]
         for i in 1..<legth {
             max_l[i] = max(max_l[i - 1], height[i])
         }
+        // 右侧最大高度
         max_r[legth-1] = height[legth-1]
         for i in (0..<legth-1).reversed() {
             max_r[i] = max(max_r[i + 1], height[i])
         }
+        // 叠加: 左右两侧最大高度最小值
         var sum = 0
         for i in 0..<legth {
             sum += min(max_l[i], max_r[i]) - height[i]
