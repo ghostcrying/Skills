@@ -71,5 +71,49 @@ class Solution {
 
 }
 
-// print("Hello, World!")
+extension Solution {
+    
+    /// 一个最长的子字符串的长度，该子字符串中每个字符出现的次数都最少为k
+    /// 滑动窗口过于复杂
+    /// 优化: 通过递归进行分治
+    /// 核心: 字符c在s中存在次数小于k, 那么所有包含c的子串都不满足条件, 此时即可进行切分
+    func longestSubstring(_ s: String, _ k: Int) -> Int {
+        // 总长度不满足, 直接返回
+        guard s.count < k else { return 0 }
+        // 字符串切分
+        var map = [Character: Int]()
+        for i in [Character](s) {
+            map[i] = (map[i] ?? 0) + 1
+        }
+        for c in map.keys {
+            guard map[c]! >= k else { continue }
+            var length = 0
+            for sc in s.components(separatedBy: String(c)) {
+                length = max(length, longestSubstring(sc, k))
+            }
+            return length
+        }
+        return s.count
+    }
+    
+    /// 偷窃房屋问题
+    /// https://leetcode.cn/problems/house-robber/solution/da-jia-jie-she-by-leetcode-solution/
+    ///  动态规划: 将问题一分为二, 然后进行解决
+    func rob(_ nums: [Int]) -> Int {
+        let n = nums.count
+        if n == 1 {
+            return nums[0]
+        }
+        var cashes = [Int](repeating: 0, count: n)
+        cashes[0] = nums[0]
+        cashes[1] = max(nums[0], nums[1])
+        for i in 2..<n {
+            cashes[i] = max(nums[i] + cashes[i-2], cashes[i-1])
+        }
+        return cashes[n-1]
+    }
+}
+
+print("偷盗: \(Solution().rob([1, 2, 3, 1]))")
+print("偷盗: \(Solution().rob([2, 7, 9, 3, 1]))")
 

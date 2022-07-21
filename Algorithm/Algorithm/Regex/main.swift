@@ -7,12 +7,33 @@
 
 import Foundation
 
+/*:
+ 元字符转义:
+ ^ $ . * + ? | \ / ( ) [ ] { } = ![]: - ,
+ 
+ 需要用\\转义
+ */
+
+func regex_special() {
+    let regex = "\\^\\$\\.\\*\\+\\?\\|\\\\\\/\\[\\]\\{\\}\\=\\!\\:\\-\\,"
+    let validate = "^$.*+?|\\/[]{}=!:-,"
+    let result = RegularExpression(regex: regex, validateString: validate)
+    print(result)
+    //["^$.*+?|\\/[]{}=!:-,"]
+    
+    let regex1 = "\\[abc]"
+    let validate1 = "[abc]"
+    let result1 = RegularExpression(regex: regex, validateString: validate)
+    print(result)
+    //["[abc]"]
+}
+
 extension String {
     func firstMatch(_ pattern: String) -> NSRange? {
-        guard let pattern = try? NSRegularExpression(pattern: pattern, options: []) else {
+        guard let regular = try? NSRegularExpression(pattern: pattern, options: []) else {
             return nil
         }
-        let range = pattern.rangeOfFirstMatch(in: self, range: NSRange(location: 0, length: count))
+        let range = regular.rangeOfFirstMatch(in: self, range: NSRange(location: 0, length: count))
         if range.length == 0 {
             return nil
         }
