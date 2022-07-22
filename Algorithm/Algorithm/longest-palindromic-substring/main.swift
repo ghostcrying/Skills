@@ -33,7 +33,7 @@ class Solution {
         }
         
         let count = s.count
-        let a = s.map({ String.init($0) })
+        let a = s.map({ String($0) })
         var maxStarts = 0, maxLength = 1
         // 记录左右节点
         var l = 0

@@ -85,13 +85,17 @@ extension Solution {
         var wordSet = Set(wordList)
         var quene = [(String, Int)]()
         quene.append((beginWord, 1)) // 开始单词和层级加入队列
+        var stack = Array(repeating: [String](), count: wordList.count + 2)
+        stack[1] = [beginWord]
         while !quene.isEmpty {
             // 出队 进行bfs
             let (word, level) = quene.removeFirst()
             // 和endword相等返回层级
             if word == endWord {
+                print(stack[1...level].map { $0.first ?? "" }.joined(separator: "->"))
                 return level
             }
+            let lastStacklength = stack[level + 1].count
             // 循环单词列表
             for i in 0..<word.count {
                 // 循环26个小写字母
@@ -103,10 +107,15 @@ extension Solution {
                     if wordSet.contains(w) {
                         // 新单词加入队列
                         quene.append((w, level + 1))
+                        stack[level + 1].append(w)
                         // 避死循环
                         wordSet.remove(w)
                     }
                 }
+            }
+            /// 如果长度不变
+            if stack[level + 1].count == lastStacklength {
+                stack[level].removeFirst()
             }
         }
         // 始终没有遇到终点
