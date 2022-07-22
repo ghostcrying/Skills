@@ -72,10 +72,10 @@ class Solution {
         let minCount = min(array_l.count, array_r.count)
         for i in 0..<minCount {
             if array_l[i] != array_r[i] {
-                return leftStr.subStringTo(index: i)
+                return leftStr.subStringTo(i)
             }
         }
-        return leftStr.subStringTo(index: minCount)
+        return leftStr.subStringTo(minCount)
     }
 }
 
@@ -140,24 +140,27 @@ extension String {
 extension String {
 
     // 截取规定下标之后的字符串
-    func subStringFrom(index: Int) -> String {
-        let temporaryString: String = self
-        let temporaryIndex = temporaryString.index(temporaryString.startIndex, offsetBy: 3)
-        return String(temporaryString[temporaryIndex...])
+    func subStringFrom(_ index: Int) -> String {
+        guard index < count else {
+            return ""
+        }
+        let index = self.index(startIndex, offsetBy: index)
+        return String(self[index...])
     }
 
     // 截取规定下标之前的字符串
-    func subStringTo(index: Int) -> String {
-        let temporaryString = self
-        let temporaryIndex = temporaryString.index(temporaryString.startIndex, offsetBy: index)
-        return String(temporaryString[..<temporaryIndex])
+    func subStringTo(_ index: Int) -> String {
+        guard index < count else { return self }
+        let index = self.index(startIndex, offsetBy: index)
+        return String(self[..<index])
     }
 
 }
-print("sss".subStringTo(index: 3))
-print("sss++".subStringFrom(index: 3))
-
-print(Solution().ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog","hig"]))
 
 
-print(Solution().longestCommonPrefix_2(["flower", "flow", "flight"]))
+
+print("subStringTo".subStringTo(12))
+// print("sss++".subStringFrom(6))
+
+// print(Solution().ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog","hig"]))
+// print(Solution().longestCommonPrefix_2(["flower", "flow", "flight"]))

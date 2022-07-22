@@ -72,7 +72,7 @@ class Solution {
 }
 
 extension Solution {
-    
+    /// https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/
     /// 一个最长的子字符串的长度，该子字符串中每个字符出现的次数都最少为k
     /// 滑动窗口过于复杂
     /// 优化: 通过递归进行分治
@@ -98,7 +98,7 @@ extension Solution {
     
     /// 偷窃房屋问题
     /// https://leetcode.cn/problems/house-robber/solution/da-jia-jie-she-by-leetcode-solution/
-    ///  动态规划: 将问题一分为二, 然后进行解决
+    /// 动态规划: 将问题一分为二, 然后进行解决
     func rob(_ nums: [Int]) -> Int {
         let n = nums.count
         if n == 1 {

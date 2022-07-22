@@ -14,23 +14,24 @@ import Foundation
  需要用\\转义
  */
 
-func regex_special() {
-    let regex = "\\^\\$\\.\\*\\+\\?\\|\\\\\\/\\[\\]\\{\\}\\=\\!\\:\\-\\,"
-    let validate = "^$.*+?|\\/[]{}=!:-,"
-    let result = RegularExpression(regex: regex, validateString: validate)
-    print(result)
-    //["^$.*+?|\\/[]{}=!:-,"]
-    
-    let regex1 = "\\[abc]"
-    let validate1 = "[abc]"
-    let result1 = RegularExpression(regex: regex, validateString: validate)
-    print(result)
-    //["[abc]"]
-}
+//func regex_special() {
+//    let regex = "\\^\\$\\.\\*\\+\\?\\|\\\\\\/\\[\\]\\{\\}\\=\\!\\:\\-\\,"
+//    let validate = "^$.*+?|\\/[]{}=!:-,"
+//    let result = RegularExpression(regex: regex, validateString: validate)
+//    print(result)
+//    //["^$.*+?|\\/[]{}=!:-,"]
+//
+//    let regex1 = "\\[abc]"
+//    let validate1 = "[abc]"
+//    let result1 = RegularExpression(regex: regex, validateString: validate)
+//    print(result)
+//    //["[abc]"]
+//}
 
 extension String {
+    
     func firstMatch(_ pattern: String) -> NSRange? {
-        guard let regular = try? NSRegularExpression(pattern: pattern, options: []) else {
+        guard let regular = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) else {
             return nil
         }
         let range = regular.rangeOfFirstMatch(in: self, range: NSRange(location: 0, length: count))
@@ -39,21 +40,76 @@ extension String {
         }
         return range
     }
+    
+    func subString(_ range: NSRange) -> String {
+        let start = index(startIndex, offsetBy: range.location)
+        let ended = index(startIndex, offsetBy: range.location + range.length)
+        return String(self[start..<ended])
+    }
+}
+
+extension String {
+    /// 正则匹配
+    ///
+    /// - Parameters:
+    ///   - regex: 匹配规则
+    ///   - validateString: 匹配对test象
+    /// - Returns: 返回结果
+    func RegularExpression (regex:String,validateString:String) -> [String] {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: regex, options: [])
+            let matches = regex.matches(in: validateString, options: [], range: NSMakeRange(0, validateString.count))
+            
+            var data:[String] = Array()
+            for item in matches {
+                let string = (validateString as NSString).substring(with: item.range)
+                data.append(string)
+            }
+            
+            return data
+        }
+        catch {
+            return []
+        }
+    }
+
+
+    /// 字符串的替换
+    ///
+    /// - Parameters:
+    ///   - validateString: 匹配对象
+    ///   - regex: 匹配规则
+    ///   - content: 替换内容
+    /// - Returns: 结果
+    func replace(validateString:String, regex:String,content:String) -> String {
+        do {
+            let RE = try NSRegularExpression(pattern: regex, options: .caseInsensitive)
+            let modified = RE.stringByReplacingMatches(in: validateString, options: .reportProgress, range: NSRange(location: 0, length: validateString.count), withTemplate: content)
+            return modified
+        }
+        catch {
+            return validateString
+        }
+       
+    }
+
 }
 
 /// \字符的匹配在swift中需要转义: \\\\
 func regex_Special() {
     let threeDoubleQuotes = """
-    \\Escaping the first quote
+    \\\\Escaping the first quote
     """
     print(threeDoubleQuotes)
     let reg = """
-    [\\\\][A-Za-z]+
+    [\\\\][\\\\][a-z]+
     """
     if let range = threeDoubleQuotes.firstMatch(reg) {
         print(range)
+        print(threeDoubleQuotes.subString(range))
     }
 }
+regex_Special()
 
 /// 忽略大小写匹配
 /// 修饰语 i 用于忽略大小写。 例如，表达式 /The/gi 表示在全局搜索 The，在后面的 i 将其条件修改为忽略大小写，则变成搜索 the 和 The，g 表示全局搜索。
@@ -101,4 +157,4 @@ func regex_number() {
         print(range)
     }
 }
-regex_number()
+// regex_number()

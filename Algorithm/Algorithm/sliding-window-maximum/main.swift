@@ -150,8 +150,8 @@ func getPrime(_ a: Int) -> [Int] {
 }
 
 extension Solution {
-    
-    /// 1 <= n <= 1690
+    /// https://leetcode.cn/problems/ugly-number-ii/
+    /// 返回第n个丑数 1 <= n <= 1690
     /// 丑数 就是只包含质因数 2、3 和 5 的正整数
     /// 1也是丑数
     func nthUglyNumber(_ n: Int) -> Int {
